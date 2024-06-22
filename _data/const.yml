@@ -1,0 +1,36 @@
+default_models:
+  - Swallow 7B（語彙拡張）
+  - Llama 3 Swallow 8B
+
+ja_fields:
+  - 'JCom'
+  - 'JEMHopQA'
+  - 'NIILC'
+  - 'JSQuAD'
+  - 'XL-Sum'
+  - 'MGSM'
+  - 'WMT20 (en-ja)'
+  - 'WMT20 (ja-en)'
+  - 'JMMLU'
+  - 'JHumanEval'
+
+ja_mtb_fields:
+  - 'Coding'
+  - 'Extraction'
+  - 'Humanities'
+  - 'Math'
+  - 'Reasoning'
+  - 'Roleplay'
+  - 'Stem'
+  - 'Writing'
+
+en_fields:
+  - 'OpenBookQA'
+  - 'TriviaQA'
+  - 'HellaSwag'
+  - 'SQuAD2'
+  - 'XWINO'
+  - 'MMLU'
+  - 'GSM8K'
+  - 'BBH'
+  - 'HumanEval'

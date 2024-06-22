@@ -1,0 +1,561 @@
+{% assign ui = site.data.ui[page.lang] | default: site.data.ui.en %}
+
+<main class="container">
+    <div class="row mb-3">
+        {% for view in page.views %}
+        <div class="col-xl-{{ view.width }} themed-grid-col">
+            {% if view.type == "bar" %}
+            <!-- Orientation (landscape/portrait) buttons -->
+            <div id="bar{{ forloop.index }}-orientation" class="d-inline-flex gap-1 float-xl-start">
+                <label class="col-form-label">{{ ui.orientation }}:</label>
+                <button id="bar{{ forloop.index }}-orientation-landscape" type="button" class="btn btn-sm active">{{ ui.landscape }}</button>
+                <button id="bar{{ forloop.index }}-orientation-portrait" type="button" class="btn btn-sm">{{ ui.portrait }}</button>
+            </div>
+            <!-- Sort buttons -->
+            <div id="bar{{ forloop.index }}-sort" class="d-inline-flex gap-1 float-xl-end">
+                <label class="col-form-label">{{ ui.sort_by }}:</label>
+                <button id="bar{{ forloop.index }}-sort-ja" type="button" class="btn btn-sm active">{{ ui.japanese }}</button>
+                <button id="bar{{ forloop.index }}-sort-ja_mtb" type="button" class="btn btn-sm">{{ ui.japanese_mtb }}</button>
+                <button id="bar{{ forloop.index }}-sort-en" type="button" class="btn btn-sm">{{ ui.english }}</button>
+            </div>    
+            {% elsif view.type == "scatter" %}
+            <div id="scatter{{ forloop.index }}-axis" class="d-inline-flex gap-1 float-xl-start">
+                <!-- X-axis selector -->
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">{{ ui.x_axis }}</button>
+                    <ul id="scatter{{ forloop.index }}-x-axis" class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" data-axis="x" data-field="Ja Avg">{{ ui.japanese_avg }}</a></li>
+                        {% for field in site.data.const.ja_fields %}
+                        <li><a class="dropdown-item" href="#" data-axis="x" data-field="{{ field }}">{{ field }}</a></li>
+                        {% endfor %}
+                        <li><a class="dropdown-item" href="#" data-axis="x" data-field="Ja MT-Bench">{{ ui.japanese_mtb_avg }}</a></li>
+                        {% for field in site.data.const.ja_mtb_fields %}
+                        <li><a class="dropdown-item" href="#" data-axis="x" data-field="{{ field }}">{{ field }}</a></li>
+                        {% endfor %}
+                        <li><a class="dropdown-item" href="#" data-axis="x" data-field="En Avg">{{ ui.english_avg }}</a></li>
+                        {% for field in site.data.const.en_fields %}
+                        <li><a class="dropdown-item" href="#" data-axis="x" data-field="{{ field }}">{{ field }}</a></li>
+                        {% endfor %}        
+                    </ul>
+                </div>
+                <!-- Y-axis selector -->
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">{{ ui.y_axis }}</button>
+                    <ul id="scatter{{ forloop.index }}-y-axis" class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" data-axis="y" data-field="Ja Avg">{{ ui.japanese_avg }}</a></li>
+                        {% for field in site.data.const.ja_fields %}
+                        <li><a class="dropdown-item" href="#" data-axis="y" data-field="{{ field }}">{{ field }}</a></li>
+                        {% endfor %}
+                        <li><a class="dropdown-item" href="#" data-axis="y" data-field="Ja MT-Bench">{{ ui.japanese_mtb_avg }}</a></li>
+                        {% for field in site.data.const.ja_mtb_fields %}
+                        <li><a class="dropdown-item" href="#" data-axis="y" data-field="{{ field }}">{{ field }}</a></li>
+                        {% endfor %}
+                        <li><a class="dropdown-item" href="#" data-axis="y" data-field="En Avg">{{ ui.english_avg }}</a></li>
+                        {% for field in site.data.const.en_fields %}
+                        <li><a class="dropdown-item" href="#" data-axis="y" data-field="{{ field }}">{{ field }}</a></li>
+                        {% endfor %}        
+                    </ul>
+                </div>
+            </div>
+            {% endif %}
+            <!-- A canvas for visualization -->
+            <canvas id="canvas{{ forloop.index }}"></canvas>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h3>{{ ui.models }}</h3>
+    <!-- Column selector buttons -->
+    <div id="column-selector-group" class="d-inline-flex gap-1 float-xl-start">
+        <label class="col-form-label">{{ ui.show_columns }}:</label>
+        <button id="btn_ja" type="button" class="btn active btn-sm" data-bs-toggle="button" aria-pressed="true">{{ ui.japanese }}</button>
+        <button id="btn_ja_mtb" type="button" class="btn active btn-sm" data-bs-toggle="button" aria-pressed="true">{{ ui.japanese_mtb }}</button>
+        <button id="btn_en" type="button" class="btn active btn-sm" data-bs-toggle="button" aria-pressed="true">{{ ui.english }}</button>
+    </div>
+    <!-- Row selector buttons -->
+    <div id="row-selector-group" class="d-inline-flex gap-1 float-xl-end">
+        <label class="col-form-label">{{ ui.select_rows }}:</label>
+        <button id="btn_base" type="button" class="btn btn-sm{% if page.select_all %} active{% endif %}" data-bs-toggle="button" aria-pressed="{{ page.select_all | default: false }}">{{ ui.all_base_models }}</button>
+        <button id="btn_chat" type="button" class="btn btn-sm{% if page.select_all %} active{% endif %}" data-bs-toggle="button" data-column="ja_mtb" aria-pressed="{{  page.select_all | default: false }}">{{ ui.all_instruct_models }}</button>
+    </div>
+    <!-- The table enhanced by DataTables -->
+    <table id="example" class="cell-border fs-6" style="width:100%">
+        <thead>
+            <tr>
+                <th colspan="4" class="dt-center" data-dt-order="disable">{{ ui.model }}</th>
+                <th colspan="3" class="dt-center" data-dt-order="disable">{{ ui.lang_avg }}</th>
+                <th colspan="10" class="dt-center" data-dt-order="disable">{{ ui.japanese }}</th>
+                <th colspan="8" class="dt-center" data-dt-order="disable">{{ ui.japanese_mtb }}</th>
+                <th colspan="9" class="dt-center" data-dt-order="disable">{{ ui.english }}</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>{{ ui.name }}</th>
+                <th>{{ ui.type }}</th>
+                <th>{{ ui.size }}</th>
+                <th>{{ ui.ja }}</th>
+                <th>{{ ui.ja_mtb }}</th>
+                <th>{{ ui.en }}</th>
+                {% for field in site.data.const.ja_fields %}
+                <th>{{ field }}</th>
+                {% endfor %}
+                {% for field in site.data.const.ja_mtb_fields %}
+                <th>{{ field }}</th>
+                {% endfor %}
+                {% for field in site.data.const.en_fields %}
+                <th>{{ field }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th></th>
+                <th>{{ ui.name }}</th>
+                <th>{{ ui.type }}</th>
+                <th>{{ ui.size }}</th>
+                <th>{{ ui.ja }}</th>
+                <th>{{ ui.ja_mtb }}</th>
+                <th>{{ ui.en }}</th>
+                {% for field in site.data.const.ja_fields %}
+                <th>{{ field }}</th>
+                {% endfor %}
+                {% for field in site.data.const.ja_mtb_fields %}
+                <th>{{ field }}</th>
+                {% endfor %}
+                {% for field in site.data.const.en_fields %}
+                <th>{{ field }}</th>
+                {% endfor %}
+            </tr>
+        </tfoot>
+    </table>
+</main>
+
+{% include script.html %}
+
+<script>
+const range = (start, end) => [...Array((end - start) + 1)].map((_, i) => start + i);
+
+const default_models = {{ site.data.const.default_models | jsonify }};
+const ja_fields = {{ site.data.const.ja_fields | jsonify }};
+const ja_mtb_fields = {{ site.data.const.ja_mtb_fields | jsonify }};
+const en_fields = {{ site.data.const.en_fields | jsonify }};
+const col_ja = 7;
+const col_ja_mtb = col_ja + ja_fields.length;
+const col_en = col_ja_mtb + ja_mtb_fields.length;
+const col_end = col_en + en_fields.length;
+const cols_ja = range(col_ja, col_ja_mtb-1);
+const cols_ja_mtb = range(col_ja_mtb, col_en-1);
+const cols_en = range(col_en, col_end-1);
+
+var scatter_axis = {};
+{% for view in page.views %}
+{% if view.type == "scatter" %}
+scatter_axis[{{ forloop.index }}] = {
+    x: "Ja Avg",
+    y: "En Avg",
+};
+{% endif %}
+{% endfor %}
+
+function get_rader_data(dataSet, names, fields)
+{
+    // Extract data of the selected models.
+    const models = dataSet.filter(d => names.includes(d["Name"]));
+
+    // Extract scores of the specified fields.
+    let data = [];
+    for (const model of models) {
+        data.push({
+            label: model["Name"],
+            data: fields.map(field => model[field]),
+            fill: true,
+        });
+    }
+    return data;
+}
+
+function get_bar_sort_order(viewid)
+{
+    const prefix = '#bar' + viewid + '-sort-';
+    if ($(prefix + 'ja').hasClass('active')) {
+        return 'Ja Avg';
+    } else if ($(prefix + 'ja_mtb').hasClass('active')) {
+        return 'Ja MT-Bench';
+    } else {
+        return 'En Avg';
+    }
+}
+
+function get_bar_data(dataSet, names, viewid)
+{
+    // Find model names selected in the table.
+    const key = get_bar_sort_order(viewid);
+
+    // Extract data of the selected models.
+    const models = dataSet.filter(d => names.includes(d["Name"]));
+
+    // Sort models by key.
+    models.sort(function(a, b) {
+        var x = a[key];
+        var y = b[key];
+        if (isNaN(x)) x = 0.;
+        if (isNaN(y)) y = 0.;
+        return y - x;
+    });
+
+    // Build the data with average scores.
+    const data = {
+        labels: models.map(model => model['Name']),
+        datasets: [
+            { label: '{{ ui.japanese }}', data: models.map(model => model['Ja Avg']) },
+            { label: '{{ ui.japanese_mtb }}', data: models.map(model => model['Ja MT-Bench']) },
+            { label: '{{ ui.english }}', data: models.map(model => model['En Avg']) },
+        ],
+    }
+    return data;
+}
+
+function get_scatter_data(dataSet, names, xf, yf)
+{
+    // Extract data of the selected models.
+    const models = dataSet.filter(d => names.includes(d["Name"]));
+
+    let data = [];
+    for (const model of models) {
+        // Find the radius based on the model size.
+        radius = model["Size (B)"];
+        if (isNaN(radius)) {
+            radius = 175;
+        }
+        radius = Math.log2(radius / 2) + 1;
+
+        // Change the point style for Swallow models.
+        let pointStyle = 'circle';
+        if (model["Name"].search("Swallow") != -1) {
+            pointStyle = 'rectRot';
+        }
+
+        data.push({
+            label: model["Name"],
+            data: [{ x: model[xf], y: model[yf] }],
+            pointRadius: radius,
+            pointHoverRadius: radius + 5,
+            pointStyle: pointStyle,
+        });
+    }
+    return data;
+}
+
+function update_rader(obj, target, names, viewid)
+{
+    let fields = null;
+    if (target == "ja") {
+        fields = ja_fields;
+    } else if (target == "ja_mtb") {
+        fields = ja_mtb_fields;
+    } else if (target == "en") {
+        fields = en_fields;
+    }
+
+    obj.data = {
+        labels: fields,
+        datasets: get_rader_data(dataSet, names, fields),
+    };
+    obj.update();
+}
+
+function update_bar(obj, target, names, viewid)
+{
+    obj.data = get_bar_data(dataSet, names, viewid);
+    obj.update();
+}
+
+function update_scatter(obj, target, names, viewid)
+{
+    obj.data = {
+        datasets: get_scatter_data(dataSet, names, scatter_axis[viewid]["x"], scatter_axis[viewid]["y"]),
+    };
+    let scales = obj.options.scales;
+    scales.x.title.display = true;
+    scales.x.title.text = scatter_axis[viewid]["x"];
+    scales.y.title.display = true;
+    scales.y.title.text = scatter_axis[viewid]["y"];
+    obj.update();
+}
+
+function update_chart(viewid=0)
+{
+    const selected = table.rows({ selected: true });
+    const names = selected[0].map(i => dataSet[i]["Name"]);
+
+    // Update views.
+    {% for view in page.views %}
+    if (viewid == 0 || viewid == {{ forloop.index }}) {
+        {% if view.type == "rader" %}
+        update_rader(rader{{ forloop.index }}, "{{ view.target}}", names, {{ forloop.index }});
+        {% elsif view.type == "bar" %}
+        update_bar(bar{{ forloop.index }}, "{{ view.target}}", names, {{ forloop.index }});
+        {% elsif view.type == "scatter" %}
+        update_scatter(scatter{{ forloop.index }}, "{{ view.target}}", names, {{ forloop.index }});
+        {% endif %}
+    }
+    {% endfor %}
+
+    // Update link URLs.
+    $('#navbar a').each(function(index) {
+        const href = $(this).attr('href');
+        const p = href.indexOf('?');
+        const base = p == -1 ? href : href.slice(0, p);
+        {% if page.use_query_string %}
+        $(this).attr('href', base + '?' + names.join('&'));
+        {% else %}
+        $(this).attr('href', base + location.search);
+        {% endif %}
+    });
+}
+
+function create_bar_chart(element, portrait, data, aspect_portrait, aspect_landscape)
+{
+    return new Chart(
+        element, {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                indexAxis: portrait ? 'y' : 'x',
+                aspectRatio: portrait ? aspect_portrait : aspect_landscape,
+                scales: portrait ?
+                    { x: { beginAtZero: true, min: 0, max: 1 }, xAxes: [{ ticks: {autoSkip: false } } ] } :
+                    { y: { beginAtZero: true, min: 0, max: 1 } },
+                layout: { padding: {left: 20, right: 20} },
+                plugins: { title: { display: true, position: 'bottom', text: '{{ ui.lang_avg_long }}' } },
+            },
+        }
+    );
+}
+
+$(function()
+{
+    if (location.pathname.endsWith("index.ja.html") || location.pathname.endsWith("index.en.html")) {
+        if (location.search == "") {
+            $('#navbar a').each(function(index) {
+                const href = $(this).attr('href');
+                const p = href.indexOf('?');
+                const base = p == -1 ? href : href.slice(0, p);
+                $(this).attr('href', base + '?' + default_models.join('&'));
+            });
+        }
+    }
+});
+
+{% for view in page.views %}
+{% if view.type == "rader" %}
+// Create a radar chart.
+let rader{{ forloop.index }} = new Chart(
+    document.getElementById('canvas{{ forloop.index }}'), {
+        type: 'radar',
+        data: [],
+        options: {
+            elements: { line: { borderWidth: 1 } },
+            scales: { r: { suggestedMin: 0, suggestedMax: 1 } },
+            plugins: { title: { display: true, position: 'bottom', text: '{{ view.title }}' } },
+        },
+    });
+
+{% elsif view.type == "bar" %}
+// Create a bar chart.
+let bar{{ forloop.index }} = create_bar_chart(
+    document.getElementById('canvas{{ forloop.index }}'),
+    false,
+    { labels: [], datasets: [] },
+    {{ view.aspect_portrait }},
+    {{ view.aspect_landscape }}
+    );
+
+// The event handler for sort buttons.
+$('#bar{{ forloop.index }}-sort > button').on('click', function(event)
+{
+    $('#bar{{ forloop.index }}-sort > button').each(function(index) {
+        if ($(this).attr('id') == $(event.target).attr('id')) {
+            // Activate the clicked button.
+            $(this).addClass('active');
+        } else {
+            // Inactivate other buttons.
+            $(this).removeClass('active');
+        }
+    });
+
+    // Update the bar chart.
+    const selected = table.rows({ selected: true });
+    const names = selected[0].map(i => dataSet[i]["Name"]);
+    update_bar(bar{{ forloop.index }}, "{{ view.target}}", names, {{ forloop.index }});
+});
+
+// The event handler for portrait/landscape buttons.
+$('#bar{{ forloop.index }}-orientation > button').on('click', function(event)
+{
+    $('#bar{{ forloop.index }}-orientation > button').each(function(index) {
+        if ($(this).attr('id') == $(event.target).attr('id')) {
+            // Activate the clicked button.
+            $(this).addClass('active');
+        } else {
+            // Inactivate other buttons.
+            $(this).removeClass('active');
+        }
+    });
+
+    // Destroy the old chart and create a new one.
+    const selected = table.rows({ selected: true });
+    const names = selected[0].map(i => dataSet[i]["Name"]);
+    const data = get_bar_data(dataSet, names, {{ forloop.index }});
+    bar{{ forloop.index }}.destroy();
+    bar{{ forloop.index }} = create_bar_chart(
+        document.getElementById('canvas{{ forloop.index }}'),
+        $(event.target).attr('id').endsWith("-portrait"),
+        data,
+        {{ view.aspect_portrait }},
+        {{ view.aspect_landscape }}
+        );
+});
+
+{% elsif view.type == "scatter" %}
+// Create a scatter chart.
+let scatter{{ forloop.index }} = new Chart(
+    document.getElementById('canvas{{ forloop.index }}'),
+    {
+        type: 'scatter',
+        data: [],
+        options: {
+            aspectRatio: 1.0,
+            scales: {
+                x: { beginAtZero: true, min: 0, max: 1 },
+                y: { beginAtZero: true, min: 0, max: 1 },
+            },
+            plugins: {
+                legend: {
+                    display: false,
+                    position: "right",
+                },
+            },
+        },
+    });
+
+// The event handler for x-axis and y-axis selection.
+$('#scatter{{ forloop.index }}-axis a').on('click', function(event)
+{
+    const axis = $(event.target).attr('data-axis');
+    const field = $(event.target).attr('data-field');
+    
+    if (axis == "x") {
+        scatter_axis[{{ forloop.index }}]["x"] = field;
+    } else if (axis == "y") {
+        scatter_axis[{{ forloop.index }}]["y"] = field;
+    }
+    update_chart({{ forloop.index }});
+});
+{% endif %}
+{% endfor %}
+
+// Create a DataTable instance.
+let table = new DataTable('#example', {
+    {% if page.lang == 'ja' %}
+    language: { url: 'https://cdn.datatables.net/plug-ins/2.0.8/i18n/ja.json', },
+    {% else %}
+    language: { url: 'https://cdn.datatables.net/plug-ins/2.0.8/i18n/en-GB.json', },
+    {% endif %}
+    pageLength: 100,
+    data: dataSet,
+    columnDefs: [
+        { orderable: false, render: DataTable.render.select(), targets: 0 }
+    ],
+    scrollX: true,
+    fixedColumns: { start: 2 },
+    order: [[1, 'asc']],
+    select: { style: 'multi', selector: 'td:first-child' },
+    columns: [
+        // Common columns.
+        {
+            data: null,
+            defaltContent: '',
+            checkboxes: { selectRow: true },
+        },
+        {
+            data: 'Name',
+            fnCreatedCell: function (nTd, sData, oData, iRow, iCol) {
+                $(nTd).html(oData.Name + " <a class='text-decoration-none' href='https://huggingface.co/" + oData.Model+ "'>🔗</a>");
+            },
+            width: '20em'
+        },
+        { data: 'Type' },
+        { data: 'Size (B)' },
+        { data: 'Ja Avg' },
+        { data: 'Ja MT-Bench' },
+        { data: 'En Avg' },
+        // Japanese tasks.
+        {% for field in site.data.const.ja_fields %}
+        { data: '{{ field }}' },
+        {% endfor %}
+        // Japamese MT-bench tasks.
+        {% for field in site.data.const.ja_mtb_fields %}
+        { data: '{{ field }}' },
+        {% endfor %}
+        // English tasks.
+        {% for field in site.data.const.en_fields %}
+        { data: '{{ field }}' },
+        {% endfor %}
+    ],
+{% if page.select_all %}
+    initComplete: function() {
+        this.api().rows().select();
+        update_chart();
+    },
+{% endif %}
+});
+
+table
+.on('select', function (e, dt, type, indexes) {
+    update_chart();
+})
+.on('deselect', function (e, dt, type, indexes) {
+    update_chart();
+})
+.on('init', function (e, dt, type, indexes) {
+{% if page.use_query_string %}
+    // Initialize selections based on QuqeryString.
+    // Note: language localization is necessary to invoke this event?
+    const params = new URLSearchParams(location.search);
+    for (const [key, value] of params.entries()) {
+        table.rows((idx, data) => data['Name'] === key).select();
+    }
+{% endif %}
+});
+
+$('#column-selector-group > button').on('click', function(e, dt, node, config) {
+    b = $('#btn_ja').attr('aria-pressed') == "true";
+    table.columns(cols_ja).visible(b);
+    b = $('#btn_ja_mtb').attr('aria-pressed') == "true";
+    table.columns(cols_ja_mtb).visible(b);
+    b = $('#btn_en').attr('aria-pressed') == "true";
+    table.columns(cols_en).visible(b);
+});
+
+$('#row-selector-group > button').on('click', function(event)
+{
+    const e = $(event.target);
+    const target = e.attr('id');
+    const b = e.attr('aria-pressed') == "true";
+    if (target == "btn_base") {
+        if (b) {
+            table.rows( (idx, data) => data.Type === 'base' ).select();
+        } else {
+            table.rows( (idx, data) => data.Type === 'base' ).deselect();
+        }
+    } else if (target == "btn_chat") {
+        if (b) {
+            table.rows( (idx, data) => data.Type === 'inst' ).select();
+        } else {
+            table.rows( (idx, data) => data.Type === 'inst' ).deselect();
+        }
+    }
+});
+</script>
