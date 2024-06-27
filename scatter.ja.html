@@ -10,7 +10,11 @@ views:
     target: ja
     width: 6
     title: 散布図２
+persistent_group: scatter
 select_all: true
+instructions:
+  - title: 使用方法
+    text: "任意の日本語、日本語MT-Bench、英語のタスクを横軸・縦軸に選択すると、モデルのスコアが散布図として可視化されます（点の大きさがモデルのサイズに対応します）。多くのタスクを同時に比較したい場合を想定し、二つの散布図が用意されています。可視化したいモデルは下表から選択できます。サイト左上の🔗のアイコンから、選択したモデルに対応したパーマリンクをコピーできます。"
 ---
 
 {% include view.html %}

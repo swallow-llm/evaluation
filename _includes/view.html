@@ -62,6 +62,27 @@
             <canvas id="canvas{{ forloop.index }}"></canvas>
         </div>
         {% endfor %}
+        {% if page.instructions %}
+        <!-- Instructions -->
+        <div class="col-xl-12 themed-grid-col">
+            <div class="accordion" id="accordion-instructions">
+                {% for instruction in page.instructions %}
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-instruction-{{ loop.index }}" aria-expanded="true" aria-controls="collapseOne">
+                      {{ instruction.title }}
+                    </button>
+                  </h2>
+                  <div id="collapse-instruction-{{ loop.index }}" class="accordion-collapse collapse show" data-bs-parent="#accordion-instructions">
+                    <div class="accordion-body">
+                        {{ instruction.text }}
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+            </div>            
+        </div>
+        {% endif %}
     </div>
 
     <h3>{{ ui.models }}</h3>
@@ -285,6 +306,20 @@ function update_scatter(obj, target, names, viewid)
     obj.update();
 }
 
+function update_url(names)
+{
+    // Update the URL of the navigation links.
+    $('#navbar a').each(function(index) {
+        const href = $(this).attr('href');
+        const p = href.indexOf('?');
+        const base = p == -1 ? href : href.slice(0, p);
+        let params = p == -1 ? {} : Object.fromEntries(new URLSearchParams(href.slice(p)));
+        params["{{ page.persistent_group }}"] = JSON.stringify(names);
+        search = new URLSearchParams(params);
+        $(this).attr('href', base + '?' + search.toString());
+    });
+}
+
 function update_chart(viewid=0)
 {
     const selected = table.rows({ selected: true });
@@ -303,17 +338,8 @@ function update_chart(viewid=0)
     }
     {% endfor %}
 
-    // Update link URLs.
-    $('#navbar a').each(function(index) {
-        const href = $(this).attr('href');
-        const p = href.indexOf('?');
-        const base = p == -1 ? href : href.slice(0, p);
-        {% if page.use_query_string %}
-        $(this).attr('href', base + '?' + names.join('&'));
-        {% else %}
-        $(this).attr('href', base + location.search);
-        {% endif %}
-    });
+    // Update link URLs with the current selections.
+    update_url(names.length == table.data().count() ? '__ALL__' : names);
 }
 
 function create_bar_chart(element, portrait, data, aspect_portrait, aspect_landscape)
@@ -335,20 +361,6 @@ function create_bar_chart(element, portrait, data, aspect_portrait, aspect_lands
         }
     );
 }
-
-$(function()
-{
-    if (location.pathname.endsWith("index.ja.html") || location.pathname.endsWith("index.en.html")) {
-        if (location.search == "") {
-            $('#navbar a').each(function(index) {
-                const href = $(this).attr('href');
-                const p = href.indexOf('?');
-                const base = p == -1 ? href : href.slice(0, p);
-                $(this).attr('href', base + '?' + default_models.join('&'));
-            });
-        }
-    }
-});
 
 {% for view in page.views %}
 {% if view.type == "rader" %}
@@ -518,12 +530,45 @@ let table = new DataTable('#example', {
         var classes = api.column(2).header().className;    
         api.column(1).header().className = classes;
     },
-{% if page.select_all %}
     initComplete: function() {
-        this.api().rows().select();
-        update_chart();
+        // Set the default selections for index pages accessed with an empty QueryString.
+        if (location.pathname.endsWith("index.ja.html") || location.pathname.endsWith("index.en.html")) {
+            if (location.search == "") {
+                // Default selections.
+                let params = {{ site.data.const.default_selection | jsonify }};
+                // Encode the values in JSON.
+                for (let [key, value] of Object.entries(params)) {
+                    params[key] = JSON.stringify(value);
+                }
+                // Set the selection to the QueryString.
+                const search = new URLSearchParams(params);
+                location.search = search.toString();
+            }
+        }
+
+        // Set the query string to all links.
+        $('#navbar a').each(function(index) {
+            const href = $(this).attr('href');
+            const p = href.indexOf('?');
+            const base = p == -1 ? href : href.slice(0, p);
+            $(this).attr('href', base + location.search);
+        });
+
+        // Initialize selections based on QueryString.
+        const params = new URLSearchParams(location.search);
+        for (const [key, value] of params.entries()) {
+            if (key == "{{ page.persistent_group }}") {
+                const selection = JSON.parse(value);
+                if (selection == "__ALL__") {
+                    this.api().rows().select();
+                } else {
+                    for (const name of selection) {
+                        table.rows((idx, data) => data['Name'] === name).select();
+                    }
+                }
+            }
+        }
     },
-{% endif %}
 });
 
 table
@@ -532,16 +577,6 @@ table
 })
 .on('deselect', function (e, dt, type, indexes) {
     update_chart();
-})
-.on('init', function (e, dt, type, indexes) {
-{% if page.use_query_string %}
-    // Initialize selections based on QuqeryString.
-    // Note: language localization is necessary to invoke this event?
-    const params = new URLSearchParams(location.search);
-    for (const [key, value] of params.entries()) {
-        table.rows((idx, data) => data['Name'] === key).select();
-    }
-{% endif %}
 });
 
 $('#column-selector-group > button').on('click', function(e, dt, node, config) {

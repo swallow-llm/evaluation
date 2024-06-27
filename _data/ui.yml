@@ -1,5 +1,5 @@
 en:
-  site: "Japanese LLM Evaluation"
+  site: "Japanese LLM Evaluation 🔗"
   model: "Model"
   type: "Type"
   base: "Base"
@@ -32,7 +32,7 @@ en:
   y_axis: "Y axis"
 
 ja:
-  site: "日本語LLM評価"
+  site: "日本語LLM評価 🔗"
   model: "モデル"
   type: "種別"
   base: "ベース"
@@ -53,8 +53,8 @@ ja:
   ja_mtb: '日 (MTB)'
   en: "英"
   orientation: "向き"
-  landscape: "横"
-  portrait: "縦"
+  landscape: "横長"
+  portrait: "縦長"
   sort_by: "整列順"
   all_models: "全てのモデル"
   all_base_models: "ベース"
@@ -63,3 +63,4 @@ ja:
   select_rows: "モデル"
   x_axis: "横軸"
   y_axis: "縦軸"
+

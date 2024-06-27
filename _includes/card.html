@@ -1,0 +1,16 @@
+{% assign items = page[include.items] %}
+
+<div class="row">
+    {% for item in items %}
+    <div class="{{ include.style | default: "col-sm-3 mb-3" }}">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.title }}</h5>
+                {% if item.subtitle %}<h6 class="card-subtitle mb-2 text-body-secondary">{{ item.subtitle | markdownify }}</h6>{% endif %}
+                {% if item.text %}<p class="card-text">{{ item.text | markdownify }}</p>{% endif %}
+                {% if item.link %}<a href="{{ item.link.href }}" class="card-link">{{ item.link.text | default: item.link.href }}</a>{% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

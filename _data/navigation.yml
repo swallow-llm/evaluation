@@ -1,25 +1,29 @@
 ja:
   - title: 総合
     url: /index.ja.html
-    persist_selection: false
+    persistent_group: index
   - title: タスク
     url: /task.ja.html
-    persist_selection: true
+    persistent_group: task
   - title: タスク＋総合
     url: /task-avg.ja.html
-    persist_selection: true
+    persistent_group: task
   - title: 散布図
     url: /scatter.ja.html
+    persistent_group: scatter
+  - title: このサイトについて
+    url: /about.ja.html
 
 en:
   - title: Overall
     url: /index.en.html
-    persist_selection: false
+    persistent_group: index
   - title: Task
     url: /task.en.html
-    persist_selection: true
+    persistent_group: task
   - title: Task+Overall
     url: /task-avg.en.html
-    persist_selection: true
+    persistent_group: task
   - title: Scatter
     url: /scatter.en.html
+    persistent_group: scatter

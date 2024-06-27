@@ -20,7 +20,10 @@ views:
     title: Average
     aspect_portrait: 1.1
     aspect_landscape: 1.1
-use_query_string: true
+persistent_group: task
+instructions:
+  - title: Usage and Notes
+    text: "Scores for all tasks in Japanese, Japanese MT-Bench, and English benchmark for the LLMs selected in the table below are visualized in radar charts. In adition, average scores are visualized in a bar chart. You can copy the permalink corresponding to the selected model from the icon 🔗 in the upper left corner of the site. Note that <strong>it may be inappropriate to discuss the superiority of some models based on their average scores or sort order, since some tasks have not been evaluated.</strong> For example, GPT-3.5 and GPT-4 are presumed to show high performance in Japanese and English tasks, but since no evaluation was conducted, the average score for these tasks is treated as 0, and the sort order is also at the end."
 ---
 
 {% include view.html %}

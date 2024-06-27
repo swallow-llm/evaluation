@@ -3,7 +3,21 @@ layout: default
 ---
 
 <main class="container">
-    <div class="row mb-3">
+    <div class="container py-4">
         {{ content }}
     </div>
 </main>
+
+{% include script.html %}
+
+<script>
+$(function() {
+    // Set the query string to all links.
+    $('#navbar a').each(function(index) {
+        const href = $(this).attr('href');
+        const p = href.indexOf('?');
+        const base = p == -1 ? href : href.slice(0, p);
+        $(this).attr('href', base + location.search);
+    });
+});
+</script>

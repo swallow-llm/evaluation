@@ -14,7 +14,10 @@ views:
     target: en
     width: 4
     title: English
-use_query_string: true
+persistent_group: task
+instructions:
+  - title: Usage
+    text: "The scores for all tasks in Japanese, Japanese MT-Bench, and English benchmark for the LLMs selected in the table below are visualized in radar charts. You can copy the permalink corresponding to the selected model from the icon 🔗 in the upper left corner of the site."
 ---
 
 {% include view.html %}

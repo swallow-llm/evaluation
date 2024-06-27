@@ -51,7 +51,7 @@
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4" id="navbar">
 <div class="container-fluid">
-  <a class="navbar-brand" href="{{ page.url | prepend: site.baseurl }}">{{ site.data.ui[page.lang].site | default: site.data.ui.en.site }}</a>
+  <a id="self" class="navbar-brand" href="{{ page.url | prepend: site.baseurl }}">{{ site.data.ui[page.lang].site | default: site.data.ui.en.site }}</a>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -60,19 +60,19 @@
       {%- for link in site.data.navigation[page.lang] -%}
       <li class="nav-item">
         {% if page.url == link.url %}
-        <a class="nav-link active" aria-current="page" href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %} data-persist-selection="{{ link.persist_selection }}">{{ link.title }}</a>
+        <a class="nav-link active" aria-current="page" href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %} data-persistent-group="{{ link.persistent_group }}">{{ link.title }}</a>
         {% else %}
-        <a class="nav-link" href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %} data-persist-selection="{{ link.persist_selection }}">{{ link.title }}</a>
+        <a class="nav-link" href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %} data-persistent-group="{{ link.persistent_group }}">{{ link.title }}</a>
         {% endif %}
       </li>
       {%- endfor -%}
       {% if page.lang == "ja" %}
       <li class="nav-item">
-        <a class="nav-link" href="{{ page.url | prepend: site.baseurl | replace:'.ja.','.en.' }}" data-persist-selection="{{ page.persist_selection }}">English</a>
+        <a class="nav-link" href="{{ page.url | prepend: site.baseurl | replace:'.ja.','.en.' }}" data-persistent-group="{{ page.persistent_group }}">English</a>
       </li>
       {% elsif page.lang == "en" %}
       <li class="nav-item">
-        <a class="nav-link" href="{{ page.url | prepend: site.baseurl | replace:'.en.','.ja.' }}" data-persist-selection="{{ page.persist_selection }}">日本語</a>
+        <a class="nav-link" href="{{ page.url | prepend: site.baseurl | replace:'.en.','.ja.' }}" data-persistent-group="{{ page.persistent_group }}">日本語</a>
       </li>
       {% endif %}
     </ul>

@@ -14,7 +14,10 @@ views:
     target: en
     width: 4
     title: 英語
-use_query_string: true    
+persistent_group: task
+instructions:
+  - title: 使用方法
+    text: "下表で選択したLLMの日本語、日本語MT-Bench、英語の各タスクのスコアがレーダーチャートで可視化されます。サイト左上の🔗のアイコンから、選択したモデルに対応したパーマリンクをコピーできます。"
 ---
 
 {% include view.html %}
