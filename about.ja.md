@@ -53,7 +53,7 @@ ja_tasks:
       text: (Barrault et al., 2020)
   - title: 'JMMLU'
     subtitle: "マルチタスク言語理解"
-    text: 57科目からなる4値選択式の試験問題
+    text: 4値選択式の専門・学術試験問題のベンチマークMMLUの日本語訳（53科目）
     link:
       href: https://github.com/nlp-waseda/JMMLU
       text: (Yin et al., 2024)
