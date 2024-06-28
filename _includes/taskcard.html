@@ -1,0 +1,21 @@
+{% assign ui = site.data.ui[page.lang] | default: site.data.ui.en %}
+{% assign items = page[include.items] %}
+
+<div class="row">
+    {% for item in items %}
+    <div class="{{ include.style | default: "col-sm-3 mb-3" }}">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.title }}</h5>
+                {% if item.subtitle %}<h6 class="card-subtitle mb-2 text-body-secondary">{{ item.subtitle }}</h6>{% endif %}
+                {% if item.text %}<p class="card-text mb-0">{{ item.text }}</p>{% endif %}
+            </div>
+            <ul class="list-group list-group-flush">
+                {% if item.metric %}<li class="list-group-item"><strong>{{ ui.metric }}</strong>: {{ item.metric }}</li>{% endif %}
+                {% if item.setting %}<li class="list-group-item"><strong>{{ ui.setting }}</strong>: {{ item.setting }}</li>{% endif %}
+                {% if item.link %}<li class="list-group-item"><strong>{{ ui.reference }}</strong>: <a href="{{ item.link.href }}" class="card-link">{{ item.link.text | default: item.link.href }}</a></li>{% endif %}
+            </ul>
+        </div>
+    </div>
+    {% endfor %}
+</div>

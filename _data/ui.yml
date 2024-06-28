@@ -30,6 +30,9 @@ en:
   select_rows: "Models"
   x_axis: "X axis"
   y_axis: "Y axis"
+  metric: Metric
+  setting: Setting
+  reference: Reference
 
 ja:
   site: "日本語LLM評価 🔗"
@@ -63,4 +66,6 @@ ja:
   select_rows: "モデル"
   x_axis: "横軸"
   y_axis: "縦軸"
-
+  metric: 評価尺度
+  setting: 実験設定
+  reference: 出典

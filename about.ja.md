@@ -177,35 +177,30 @@ en_tasks:
       text: (Chen et al., 2021)
 
 tools:
-  - title: LLM-jp 評価スクリプト
+  - title: "LLM-jp 評価スクリプト (1.3.0)"
     subtitle: 日本語の大規模言語モデルの自動評価ツール
-    version: 1.3.0
     link:
       href: https://github.com/llm-jp/llm-jp-eval
       text: (Hanら, 2024)
-  - title: JP Language Model Evaluation Harness
+  - title: "JP Language Model Evaluation Harness (commit #9b42d41)"
     subtitle: 日本語の大規模言語モデルの評価フレームワーク
-    version: commit #9b42d41
     link:
       href: https://github.com/Stability-AI/lm-evaluation-harness/
-  - title: Language Model Evaluation Harness
+  - title: Language Model Evaluation Harness (0.4.2)
     subtitle: 大規模言語モデルの評価フレームワーク
-    version: 0.4.2
     link:
       href: https://github.com/EleutherAI/lm-evaluation-harness
       text: (Biderman et al., 2024)
-  - title: Code Generation LM Evaluation Harness
+  - title: "Code Generation LM Evaluation Harness (commit #0261c52)"
     subtitle: コード生成（HumanEval）の評価フレームワーク
-    version: commit #0261c52
     link:
       href: https://github.com/bigcode-project/bigcode-evaluation-harness
-  - title: FastChat
+  - title: "FastChat (commit #e86e70d0)"
     subtitle: LLMによる自動評価（MT-Bench）のフレームワーク
-    version: commit #e86e70d0
     link:
       href: https://github.com/lm-sys/FastChat
 ---
-## このサイトについて
+## 評価について
 
 [Swallowプロジェクト](https://swallow-llm.github.io/)では、高性能な大規模言語モデル (LLM) の開発の参考とするため、LLMの開発と並行して、公開されているLLMの評価実験を独自に進めています。日本国内のみならず、世界中で開発されたLLMと比較することで、Swallowプロジェクトの「現在地」を知ることができます。各LLMの独自仕様（トークン化やシステムプロンプトなど）を加味しながら公平な条件で評価を行い、各LLMの開発方法と照らし合わせることで、高性能なLLMを開発するための「レシピ」を検討できます。また、タスクの評価スコアの高低が、LLMに性能差によるものではなく、評価における些細な仕様（プロンプトのフォーマット等）に起因することを経験することで、LLM評価における課題も実感しています。このサイトでは、Swallowプロジェクト内で実施されたLLMの評価結果を棒グラフやレーダーチャート、散布図などで閲覧できます。用途にあったLLMを選択するための情報としてだけでなく、日本語に強いLLMの開発のための参考情報としてお役に立てると幸いです。
 
@@ -215,18 +210,18 @@ tools:
 
 ### 日本語理解・生成タスク
 
-{% include card.html items="ja_tasks" %}
+{% include taskcard.html items="ja_tasks" %}
 
 ### 日本語マルチターン対話タスク（日本語MT-Bench）
 
 マルチターン対話能力のベンチマークMT-Benchの日本語版である[日本語MT-Bench Nejumi Leaderboard Neo版](https://github.com/wandb/llm-leaderboard)を用いました。
 GPT-4 (gpt-4-1106-preview) を用いて応答文を10段階で自動評価します。評価のカテゴリは以下の通りです。
 
-{% include card.html items="jamtb_tasks" %}
+{% include taskcard.html items="jamtb_tasks" %}
 
 ### 英語理解・生成タスク
 
-{% include card.html items="en_tasks" %}
+{% include taskcard.html items="en_tasks" %}
 
 ### 評価に用いたツール
 
