@@ -7,7 +7,7 @@ ja_tasks:
     subtitle: "常識的な知識・推論に関する質問応答"
     text: 知識ベースに基づいて作成された5択の選択式問題
     metric: 精度
-    setting: 4-shots
+    setting: 4-shot
     link:
       href: https://aclanthology.org/2022.lrec-1.317/
       text: (Kurihara et al., 2022)
@@ -15,7 +15,7 @@ ja_tasks:
     subtitle: "マルチホップ質問応答"
     text: 知識量や推論能力を評価するための自由記述式質問応答
     metric: 文字F1
-    setting: 4-shots
+    setting: 4-shot
     link:
       href: https://aclanthology.org/2024.lrec-main.831/
       text: (Ishii et al., 2024)
@@ -23,7 +23,7 @@ ja_tasks:
     subtitle: "クラシカルな質問応答"
     text: 百科事典で解答が得られそうな自由記述式質問応答
     metric: 文字F1
-    setting: 4-shots
+    setting: 4-shot
     link:
       href: https://www.anlp.jp/proceedings/annual_meeting/2003/pdf_dir/C7-6.pdf
       text: (関根, 2003)
@@ -31,7 +31,7 @@ ja_tasks:
     subtitle: "機械読解"
     text: Wikipedia記事に対する自由記述式質問応答
     metric: 文字F1
-    setting: 4-shots
+    setting: 4-shot
     link:
       href: https://aclanthology.org/2022.lrec-1.317/
       text: (Kurihara et al., 2022)
@@ -47,7 +47,7 @@ ja_tasks:
     subtitle: "数学（算数）"
     text: 小学校の数学の文章題データセット（GSM8K）の日本語訳
     metric: 精度, 完全一致
-    setting: 4-shots
+    setting: 4-shot
     link:
       href: https://openreview.net/forum?id=fR3wGCk-IXp
       text: (Shi et al., 2023)
@@ -55,7 +55,7 @@ ja_tasks:
     subtitle: "英日機械翻訳"
     text: ニュース記事の翻訳
     metric: BLEU
-    setting: 4-shots
+    setting: 4-shot
     link:
       href: https://aclanthology.org/2020.wmt-1.1/
       text: (Barrault et al., 2020)
@@ -63,7 +63,7 @@ ja_tasks:
     subtitle: "日英機械翻訳"
     text: ニュース記事の翻訳
     metric: BLEU
-    setting: 4-shots
+    setting: 4-shot
     link:
       href: https://aclanthology.org/2020.wmt-1.1/
       text: (Barrault et al., 2020)
@@ -71,7 +71,7 @@ ja_tasks:
     subtitle: "マルチタスク言語理解"
     text: 4値選択式試験問題のベンチマークMMLUの日本語訳（53科目）
     metric: 精度
-    setting: 5-shots
+    setting: 5-shot
     link:
       href: https://www.anlp.jp/proceedings/annual_meeting/2024/pdf_dir/A7-5.pdf
       text: (尹ら, 2024)
@@ -107,7 +107,7 @@ en_tasks:
     subtitle: "事実と常識に基づく質問応答"
     text: 科学的な知識と常識に基づく4択の選択式問題
     metric: 精度
-    setting: 4-shots
+    setting: 4-shot
     link:
       href: https://aclanthology.org/D18-1260/
       text: (Mihaylov et al., 2018)
@@ -115,7 +115,7 @@ en_tasks:
     subtitle: "知識に基づく質問応答"
     text: 雑学的な知識に基づく自由記述式質問応答
     metric: 精度, 完全一致
-    setting: 4-shots
+    setting: 4-shot
     link:
       href: https://aclanthology.org/P17-1147/
       text: (Joshi et al., 2017)
@@ -123,7 +123,7 @@ en_tasks:
     subtitle: "常識推論"
     text: 次に起こるイベントを予測する4択の選択式問題
     metric: 精度
-    setting: 4-shots
+    setting: 4-shot
     link:
       href: https://aclanthology.org/P19-1472/
       text: (Zellers et al., 2019)
@@ -131,7 +131,7 @@ en_tasks:
     subtitle: "機械読解"
     text: 根拠文書に対して作成された自由記述式質問応答
     metric: 精度, 完全一致
-    setting: 4-shots
+    setting: 4-shot
     link:
       href: https://aclanthology.org/P18-2124/
       text: (Rajpurkar et al., 2018)
@@ -139,7 +139,7 @@ en_tasks:
     subtitle: "常識推論"
     text: 文中の代名詞の先行詞を推定する2択の選択式問題
     metric: 精度
-    setting: 4-shots
+    setting: 4-shot
     link:
       href: https://aclanthology.org/2021.findings-acl.310/
       text: (Tikhonov and Ryabinin, 2021)
@@ -147,7 +147,7 @@ en_tasks:
     subtitle: "マルチタスク言語理解"
     text: 57科目からなる4値選択式の試験問題
     metric: 精度
-    setting: 5-shots
+    setting: 5-shot
     link:
       href: https://openreview.net/forum?id=d7KBjmI3GmQ
       text: (Hendrycks et al., 2021)
@@ -155,7 +155,7 @@ en_tasks:
     subtitle: "数学（算数）"
     text: 小学校の数学の文章題データセット
     metric: 精度, 完全一致
-    setting: 4-shots
+    setting: 4-shot
     link:
       href: https://arxiv.org/abs/2110.14168
       text: (Cobbe et al., 2021)
@@ -163,7 +163,7 @@ en_tasks:
     subtitle: LLMにとって難しいタスクのコレクション
     text: BIG-Benchデータセット (Srivastava et al., 2023) の中でも難易度の高い23件のタスク
     metric: 精度, 完全一致
-    setting: 3-shots, CoT
+    setting: 3-shot, CoT
     link:
       href: https://aclanthology.org/2023.findings-acl.824/
       text: (Suzgun et al., 2023)
