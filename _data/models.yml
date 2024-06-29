@@ -1,0 +1,313 @@
+- basename: ''
+  missing: ''
+  model: CohereForAI/c4ai-command-r-v01
+  name: C4AI Command-R v0.1
+  size: 35
+  type: base
+- basename: CyberAgentLM2-7B
+  missing: ''
+  model: cyberagent/calm2-7b-chat
+  name: CyberAgentLM2-7B-chat
+  size: 7
+  type: instruct
+- basename: ''
+  missing: ''
+  model: cyberagent/calm2-7b
+  name: CyberAgentLM2-7B
+  size: 7
+  type: base
+- basename: ''
+  missing: ''
+  model: elyza/ELYZA-japanese-Llama-2-13b
+  name: ELYZA-japanese-Llama-2-13b
+  size: 13
+  type: base
+- basename: ''
+  missing: HumanEval
+  model: Fugaku-LLM/Fugaku-LLM-13B
+  name: Fugaku-LLM 13B
+  size: 13
+  type: base
+- basename: 非公開
+  missing: Japanese tasks, English tasks
+  model: gpt-3.5-turbo-0125
+  name: GPT-3.5 (gpt-3.5-turbo-0125)
+  size: .nan
+  type: instruct
+- basename: 非公開
+  missing: Japanese tasks, English tasks
+  model: gpt-4o-2024-05-13
+  name: GPT-4o (gpt-4o-2024-05-13)
+  size: .nan
+  type: instruct
+- basename: ''
+  missing: ''
+  model: stabilityai/japanese-stablelm-base-gamma-7b
+  name: Japanese Stable LM Base Gamma 7B
+  size: 7
+  type: base
+- basename: ''
+  missing: ''
+  model: stabilityai/japanese-stablelm-base-beta-7b
+  name: Japanese Stable LM Beta 7B
+  size: 7
+  type: base
+- basename: ''
+  missing: ''
+  model: stabilityai/japanese-stablelm-base-beta-70b
+  name: Japanese Stable LM Beta 70B
+  size: 70
+  type: base
+- basename: KARAKURI LM 70B v0.1
+  missing: ''
+  model: karakuri-ai/karakuri-lm-70b-chat-v0.1
+  name: KARAKURI LM 70B Chat v0.1
+  size: 70
+  type: instruct
+- basename: Swallow-MX-8x7b-NVE-v0.1
+  missing: Japanese tasks, Japanese MT-bench tasks, English tasks
+  model: karakuri-ai/karakuri-lm-8x7b-instruct-v0.1
+  name: KARAKURI LM 8x7B Instruct v0.1
+  size: 47
+  type: instruct
+- basename: ''
+  missing: ''
+  model: karakuri-ai/karakuri-lm-70b-v0.1
+  name: KARAKURI LM 70B v0.1
+  size: 70
+  type: base
+- basename: ''
+  missing: ''
+  model: llm-jp/llm-jp-13b-v2.0
+  name: LLM-jp-13B v2.0
+  size: 13
+  type: base
+- basename: ''
+  missing: ''
+  model: meta-llama/Llama-2-7b-hf
+  name: Llama 2 7B
+  size: 7
+  type: base
+- basename: ''
+  missing: ''
+  model: meta-llama/Llama-2-13b-hf
+  name: Llama 2 13B
+  size: 13
+  type: base
+- basename: ''
+  missing: ''
+  model: meta-llama/Llama-2-70b-hf
+  name: Llama 2 70B
+  size: 70
+  type: base
+- basename: Llama 3 8B
+  missing: ''
+  model: meta-llama/Meta-Llama-3-8B-Instruct
+  name: Llama 3 8B Instruct
+  size: 8
+  type: instruct
+- basename: Llama 3 70B
+  missing: ''
+  model: meta-llama/Meta-Llama-3-70B-Instruct
+  name: Llama 3 70B Instruct
+  size: 70
+  type: instruct
+- basename: ''
+  missing: ''
+  model: meta-llama/Meta-Llama-3-8B
+  name: Llama 3 8B
+  size: 8
+  type: base
+- basename: ''
+  missing: ''
+  model: meta-llama/Meta-Llama-3-70B
+  name: Llama 3 70B
+  size: 70
+  type: base
+- basename: Llama 3 Swallow 8B
+  missing: ''
+  model: tokyotech-llm/Llama-3-Swallow-8B-v0.1
+  name: Llama 3 Swallow 8B Instruct
+  size: 8
+  type: instruct
+- basename: Llama 3 Swallow 70B
+  missing: Japanese tasks, Japanese MT-bench tasks, English tasks
+  model: tokyotech-llm/Llama-3-Swallow-8B-Instruct-v0.1
+  name: Llama 3 Swallow 70B Instruct
+  size: 70
+  type: instruct
+- basename: ''
+  missing: ''
+  model: tokyotech-llm/Llama-3-Swallow-8B-v0.1
+  name: Llama 3 Swallow 8B
+  size: 8
+  type: base
+- basename: ''
+  missing: ''
+  model: tokyotech-llm/Llama-3-Swallow-70B-v0.1
+  name: Llama 3 Swallow 70B
+  size: 70
+  type: base
+- basename: ''
+  missing: ''
+  model: rinna/llama-3-youko-8b
+  name: Llama 3 Youko 8B
+  size: 8
+  type: base
+- basename: 非公開
+  missing: ''
+  model: elyza/Llama-3-ELYZA-JP-8B
+  name: Llama-3-ELYZA-JP-8B
+  size: 8
+  type: instruct
+- basename: ''
+  missing: ''
+  model: mistralai/Mistral-7B-v0.1
+  name: Mistral-7B-v0.1
+  size: 7
+  type: base
+- basename: ''
+  missing: ''
+  model: mistral-community/Mistral-7B-v0.2
+  name: Mistral-7B-v0.2
+  size: 7
+  type: base
+- basename: Mixtral-8x7B-v0.1
+  missing: ''
+  model: mistralai/Mixtral-8x7B-Instruct-v0.1
+  name: Mixtral-8x7B-Instruct-v0.1
+  size: 47
+  type: instruct
+- basename: ''
+  missing: JCom, JEMHopQA, NIILC, JSQuAD, Ja Avg, OpenBookQA, TriviaQA, HellaSwag,
+    SQuAD2, XWINO, GSM8K, BBH, HumanEval, En Avg
+  model: mistralai/Mixtral-8x7B-v0.1
+  name: Mixtral-8x7B-v0.1
+  size: 47
+  type: base
+- basename: ''
+  missing: ''
+  model: Qwen/Qwen1.5-7B
+  name: Qwen1.5-7B
+  size: 7
+  type: base
+- basename: Qwen2-7B
+  missing: ''
+  model: Qwen/Qwen2-7B-Instruct
+  name: Qwen2-7B-Instruct
+  size: 7
+  type: instruct
+- basename: Qwen2-72B
+  missing: ''
+  model: Qwen/Qwen2-72B-Instruct
+  name: Qwen2-72B-Instruct
+  size: 72
+  type: instruct
+- basename: ''
+  missing: ''
+  model: Qwen/Qwen2-7B
+  name: Qwen2-7B
+  size: 7
+  type: base
+- basename: ''
+  missing: ''
+  model: Qwen/Qwen2-72B
+  name: Qwen2-72B
+  size: 72
+  type: base
+- basename: RakutenAI-7B
+  missing: ''
+  model: Rakuten/RakutenAI-7B-chat
+  name: RakutenAI-7B-chat
+  size: 7
+  type: instruct
+- basename: ''
+  missing: ''
+  model: Rakuten/RakutenAI-7B
+  name: RakutenAI-7B
+  size: 7
+  type: base
+- basename: ''
+  missing: ''
+  model: sbintuitions/sarashina2-7b
+  name: Sarashina2-7B
+  size: 7
+  type: base
+- basename: ''
+  missing: Japanese tasks, English tasks
+  model: sbintuitions/sarashina2-13b
+  name: Sarashina2-13B
+  size: 13
+  type: base
+- basename: ''
+  missing: ''
+  model: tokyotech-llm/Swallow-7b-hf
+  name: Swallow 7B
+  size: 7
+  type: base
+- basename: ''
+  missing: ''
+  model: tokyotech-llm/Swallow-13b-hf
+  name: Swallow 13B
+  size: 13
+  type: base
+- basename: ''
+  missing: ''
+  model: tokyotech-llm/Swallow-70b-hf
+  name: Swallow 70B
+  size: 70
+  type: base
+- basename: Swallow-7b
+  missing: ''
+  model: tokyotech-llm/Swallow-7b-instruct-v0.1
+  name: Swallow-7b-instruct-v0.1
+  size: 7
+  type: instruct
+- basename: ''
+  missing: ''
+  model: tokyotech-llm/Swallow-MS-7b-v0.1
+  name: Swallow-MS v0.1
+  size: 7
+  type: base
+- basename: Swallow-MS-7b
+  missing: ''
+  model: tokyotech-llm/Swallow-MS-7b-instruct-v0.1
+  name: Swallow-MS-7b-instruct-v0.1
+  size: 7
+  type: instruct
+- basename: ''
+  missing: ''
+  model: tokyotech-llm/Swallow-MX-8x7b-NVE-v0.1
+  name: Swallow-MX v0.1
+  size: 47
+  type: base
+- basename: instruct・chatモデルではない
+  missing: Japanese MT-bench tasks
+  model: tokyotech-llm/Swallow-MX-8x7b-NVE-v0.1
+  name: Swallow-MX-8x7b-NVE-v0.1
+  size: 47
+  type: instruct
+- basename: ''
+  missing: ''
+  model: 01-ai/Yi-1.5-6B
+  name: Yi-1.5 6B
+  size: 6
+  type: base
+- basename: ''
+  missing: ''
+  model: 01-ai/Yi-1.5-9B
+  name: Yi-1.5 9B
+  size: 9
+  type: base
+- basename: ''
+  missing: ''
+  model: 01-ai/Yi-1.5-34B
+  name: Yi-1.5 34B
+  size: 34
+  type: base
+- basename: ''
+  missing: ''
+  model: rinna/youri-7b
+  name: Youri 7B
+  size: 7
+  type: base
