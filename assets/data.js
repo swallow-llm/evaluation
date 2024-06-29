@@ -35,7 +35,8 @@ const dataSet = [
     "BBH": 0.6206,
     "HumanEval": 0.103,
     "En Avg": 0.5571,
-    "SortKey": "C4AI Command-R v0.1035"
+    "SortKey": "C4AI Command-R v0.1035",
+    "Missing": ""
   },
   {
     "Type": "inst",
@@ -73,7 +74,8 @@ const dataSet = [
     "BBH": 0.299,
     "HumanEval": 0.0,
     "En Avg": 0.3307,
-    "SortKey": "CyberAgentLM2--chat007"
+    "SortKey": "CyberAgentLM2--chat007",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -111,7 +113,8 @@ const dataSet = [
     "BBH": 0.2809,
     "HumanEval": 0.0,
     "En Avg": 0.3415,
-    "SortKey": "CyberAgentLM2-007"
+    "SortKey": "CyberAgentLM2-007",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -149,7 +152,8 @@ const dataSet = [
     "BBH": 0.4792,
     "HumanEval": 0.114,
     "En Avg": 0.4753,
-    "SortKey": "ELYZA-japanese-Llama-2-013"
+    "SortKey": "ELYZA-japanese-Llama-2-013",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -187,14 +191,15 @@ const dataSet = [
     "BBH": 0.3236,
     "HumanEval": NaN,
     "En Avg": 0.3482,
-    "SortKey": "Fugaku-LLM 013"
+    "SortKey": "Fugaku-LLM 013",
+    "Missing": "HumanEval"
   },
   {
     "Type": "inst",
     "Model": "gpt-3.5-turbo-0125",
     "Name": "GPT-3.5 (gpt-3.5-turbo-0125)",
     "Base name": "非公開",
-    "Size (B)": 0,
+    "Size (B)": NaN,
     "Coding": 0.6851,
     "Extraction": 0.7641,
     "Humanities": 0.7414,
@@ -225,14 +230,15 @@ const dataSet = [
     "BBH": NaN,
     "HumanEval": NaN,
     "En Avg": NaN,
-    "SortKey": "GPT-3.5 (gpt-3.5-turbo-0125)000"
+    "SortKey": "GPT-3.5 (gpt-3.5-turbo-0125)nan",
+    "Missing": "Japanese tasks, English tasks"
   },
   {
     "Type": "inst",
     "Model": "gpt-4o-2024-05-13",
     "Name": "GPT-4o (gpt-4o-2024-05-13)",
     "Base name": "非公開",
-    "Size (B)": 0,
+    "Size (B)": NaN,
     "Coding": 0.7296,
     "Extraction": 0.854,
     "Humanities": 0.8646,
@@ -263,7 +269,8 @@ const dataSet = [
     "BBH": NaN,
     "HumanEval": NaN,
     "En Avg": NaN,
-    "SortKey": "GPT-4o (gpt-4o-2024-05-13)000"
+    "SortKey": "GPT-4o (gpt-4o-2024-05-13)nan",
+    "Missing": "Japanese tasks, English tasks"
   },
   {
     "Type": "base",
@@ -301,7 +308,8 @@ const dataSet = [
     "BBH": 0.4632,
     "HumanEval": 0.2049,
     "En Avg": 0.4553,
-    "SortKey": "Japanese Stable LM Base Gamma 007"
+    "SortKey": "Japanese Stable LM Base Gamma 007",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -339,7 +347,8 @@ const dataSet = [
     "BBH": 0.3683,
     "HumanEval": 0.1287,
     "En Avg": 0.4159,
-    "SortKey": "Japanese Stable LM Beta 007"
+    "SortKey": "Japanese Stable LM Beta 007",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -377,7 +386,8 @@ const dataSet = [
     "BBH": 0.6701,
     "HumanEval": 0.2884,
     "En Avg": 0.5948,
-    "SortKey": "Japanese Stable LM Beta 070"
+    "SortKey": "Japanese Stable LM Beta 070",
+    "Missing": ""
   },
   {
     "Type": "inst",
@@ -415,7 +425,8 @@ const dataSet = [
     "BBH": 0.5724,
     "HumanEval": 0.2305,
     "En Avg": 0.5319,
-    "SortKey": "KARAKURI LM  Chat v0.1070"
+    "SortKey": "KARAKURI LM  Chat v0.1070",
+    "Missing": ""
   },
   {
     "Type": "inst",
@@ -453,7 +464,8 @@ const dataSet = [
     "BBH": NaN,
     "HumanEval": NaN,
     "En Avg": NaN,
-    "SortKey": "KARAKURI LM  Instruct v0.1047"
+    "SortKey": "KARAKURI LM  Instruct v0.1047",
+    "Missing": "Japanese tasks, Japanese MT-bench tasks, English tasks"
   },
   {
     "Type": "base",
@@ -491,7 +503,8 @@ const dataSet = [
     "BBH": 0.5552,
     "HumanEval": 0.2122,
     "En Avg": 0.5278,
-    "SortKey": "KARAKURI LM  v0.1070"
+    "SortKey": "KARAKURI LM  v0.1070",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -516,9 +529,9 @@ const dataSet = [
     "MGSM": 0.012,
     "WMT20 (en-ja)": 0.2421,
     "WMT20 (ja-en)": 0.1451,
-    "Ja Avg": 0.3122,
+    "Ja Avg": 0.2879,
     "JMMLU": 0.2714,
-    "JHumanEval": NaN,
+    "JHumanEval": 0.0689,
     "OpenBookQA": 0.292,
     "TriviaQA": 0.3672,
     "HellaSwag": 0.4784,
@@ -527,9 +540,10 @@ const dataSet = [
     "MMLU": 0.2465,
     "GSM8K": 0.0334,
     "BBH": 0.3035,
-    "HumanEval": NaN,
-    "En Avg": 0.3491,
-    "SortKey": "LLM-jp- v2.0013"
+    "HumanEval": 0.1006,
+    "En Avg": 0.3215,
+    "SortKey": "LLM-jp- v2.0013",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -567,7 +581,8 @@ const dataSet = [
     "BBH": 0.3993,
     "HumanEval": 0.1354,
     "En Avg": 0.4343,
-    "SortKey": "Llama 2 007"
+    "SortKey": "Llama 2 007",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -605,7 +620,8 @@ const dataSet = [
     "BBH": 0.4766,
     "HumanEval": 0.1768,
     "En Avg": 0.4864,
-    "SortKey": "Llama 2 013"
+    "SortKey": "Llama 2 013",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -643,7 +659,8 @@ const dataSet = [
     "BBH": 0.6643,
     "HumanEval": 0.3152,
     "En Avg": 0.5967,
-    "SortKey": "Llama 2 070"
+    "SortKey": "Llama 2 070",
+    "Missing": ""
   },
   {
     "Type": "inst",
@@ -681,7 +698,8 @@ const dataSet = [
     "BBH": 0.6478,
     "HumanEval": 0.5415,
     "En Avg": 0.6107,
-    "SortKey": "Llama 3  Instruct008"
+    "SortKey": "Llama 3  Instruct008",
+    "Missing": ""
   },
   {
     "Type": "inst",
@@ -719,7 +737,8 @@ const dataSet = [
     "BBH": 0.8326,
     "HumanEval": 0.7555,
     "En Avg": 0.7225,
-    "SortKey": "Llama 3  Instruct070"
+    "SortKey": "Llama 3  Instruct070",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -757,7 +776,8 @@ const dataSet = [
     "BBH": 0.6211,
     "HumanEval": 0.3793,
     "En Avg": 0.5648,
-    "SortKey": "Llama 3 008"
+    "SortKey": "Llama 3 008",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -795,11 +815,12 @@ const dataSet = [
     "BBH": 0.8266,
     "HumanEval": 0.5177,
     "En Avg": 0.6905,
-    "SortKey": "Llama 3 070"
+    "SortKey": "Llama 3 070",
+    "Missing": ""
   },
   {
     "Type": "inst",
-    "Model": "tokyotech-llm/Llama3-8b-exp6-LR2.5E-5-MINLR2.5E-6-WD0.1-iter0012500_chatvec0.5-inst-v1-NEFTune-lr2e-6-GB256",
+    "Model": "tokyotech-llm/Llama-3-Swallow-8B-v0.1",
     "Name": "Llama 3 Swallow 8B Instruct",
     "Base name": "Llama 3 Swallow 8B",
     "Size (B)": 8,
@@ -833,11 +854,12 @@ const dataSet = [
     "BBH": 0.6391,
     "HumanEval": 0.4238,
     "En Avg": 0.5743,
-    "SortKey": "Llama 3 Swallow  Instruct008"
+    "SortKey": "Llama 3 Swallow  Instruct008",
+    "Missing": ""
   },
   {
     "Type": "inst",
-    "Model": "未定",
+    "Model": "tokyotech-llm/Llama-3-Swallow-8B-Instruct-v0.1",
     "Name": "Llama 3 Swallow 70B Instruct",
     "Base name": "Llama 3 Swallow 70B",
     "Size (B)": 70,
@@ -871,23 +893,24 @@ const dataSet = [
     "BBH": NaN,
     "HumanEval": NaN,
     "En Avg": NaN,
-    "SortKey": "Llama 3 Swallow  Instruct070"
+    "SortKey": "Llama 3 Swallow  Instruct070",
+    "Missing": "Japanese tasks, Japanese MT-bench tasks, English tasks"
   },
   {
     "Type": "base",
-    "Model": "tokyotech-llm/Llama3-8b-exp6-LR2.5E-5-MINLR2.5E-6-WD0.1-iter0012500",
+    "Model": "tokyotech-llm/Llama-3-Swallow-8B-v0.1",
     "Name": "Llama 3 Swallow 8B",
     "Base name": "",
     "Size (B)": 8,
-    "Coding": 0.1081,
-    "Extraction": 0.1147,
-    "Humanities": 0.1770,
-    "Math": 0.2047,
-    "Reasoning": 0.1080,
-    "Roleplay": 0.1203,
-    "Stem": 0.1912,
-    "Writing": 0.1473,
-    "Ja MT-Bench": 0.1464,
+    "Coding": NaN,
+    "Extraction": NaN,
+    "Humanities": NaN,
+    "Math": NaN,
+    "Reasoning": NaN,
+    "Roleplay": NaN,
+    "Stem": NaN,
+    "Writing": NaN,
+    "Ja MT-Bench": NaN,
     "JCom": 0.8945,
     "JEMHopQA": 0.4848,
     "NIILC": 0.564,
@@ -909,11 +932,12 @@ const dataSet = [
     "BBH": 0.5936,
     "HumanEval": 0.3323,
     "En Avg": 0.542,
-    "SortKey": "Llama 3 Swallow 008"
+    "SortKey": "Llama 3 Swallow 008",
+    "Missing": ""
   },
   {
     "Type": "base",
-    "Model": "tokyotech-llm/Llama-3-70b-exp6-LR1.0e-5-MINLR1.0E-6-WD0.1-iter0012500",
+    "Model": "tokyotech-llm/Llama-3-Swallow-70B-v0.1",
     "Name": "Llama 3 Swallow 70B",
     "Base name": "",
     "Size (B)": 70,
@@ -947,7 +971,8 @@ const dataSet = [
     "BBH": 0.7352,
     "HumanEval": 0.4909,
     "En Avg": 0.6749,
-    "SortKey": "Llama 3 Swallow 070"
+    "SortKey": "Llama 3 Swallow 070",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -985,7 +1010,8 @@ const dataSet = [
     "BBH": 0.5704,
     "HumanEval": 0.2793,
     "En Avg": 0.51,
-    "SortKey": "Llama 3 Youko 008"
+    "SortKey": "Llama 3 Youko 008",
+    "Missing": ""
   },
   {
     "Type": "inst",
@@ -1023,7 +1049,8 @@ const dataSet = [
     "BBH": 0.3213,
     "HumanEval": 0.4604,
     "En Avg": 0.5084,
-    "SortKey": "Llama-3-ELYZA-JP-008"
+    "SortKey": "Llama-3-ELYZA-JP-008",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -1061,7 +1088,8 @@ const dataSet = [
     "BBH": 0.5597,
     "HumanEval": 0.2841,
     "En Avg": 0.5334,
-    "SortKey": "Mistral--v0.1007"
+    "SortKey": "Mistral--v0.1007",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -1099,7 +1127,8 @@ const dataSet = [
     "BBH": 0.5841,
     "HumanEval": 0.2677,
     "En Avg": 0.5305,
-    "SortKey": "Mistral--v0.2007"
+    "SortKey": "Mistral--v0.2007",
+    "Missing": ""
   },
   {
     "Type": "inst",
@@ -1137,11 +1166,12 @@ const dataSet = [
     "BBH": 0.687,
     "HumanEval": 0.5037,
     "En Avg": 0.6322,
-    "SortKey": "Mixtral--Instruct-v0.1047"
+    "SortKey": "Mixtral--Instruct-v0.1047",
+    "Missing": ""
   },
   {
     "Type": "base",
-    "Model": "mistralai/Mixtral-8x7B-Instruct-v0.1",
+    "Model": "mistralai/Mixtral-8x7B-v0.1",
     "Name": "Mixtral-8x7B-v0.1",
     "Base name": "",
     "Size (B)": 47,
@@ -1154,28 +1184,29 @@ const dataSet = [
     "Stem": NaN,
     "Writing": NaN,
     "Ja MT-Bench": NaN,
-    "JCom": 0.8391,
-    "JEMHopQA": 0.4998,
-    "NIILC": 0.3425,
-    "JSQuAD": 0.8971,
-    "XL-Sum": 0.1991,
-    "MGSM": 0.448,
-    "WMT20 (en-ja)": 0.1958,
-    "WMT20 (ja-en)": 0.2065,
-    "Ja Avg": 0.455,
-    "JMMLU": 0.4953,
-    "JHumanEval": 0.4268,
-    "OpenBookQA": 0.426,
-    "TriviaQA": 0.7694,
-    "HellaSwag": 0.6817,
-    "SQuAD2": 0.3566,
-    "XWINO": 0.923,
-    "MMLU": 0.7008,
-    "GSM8K": 0.6414,
-    "BBH": 0.687,
-    "HumanEval": 0.5037,
-    "En Avg": 0.6322,
-    "SortKey": "Mixtral--v0.1047"
+    "JCom": -1.0,
+    "JEMHopQA": -1.0,
+    "NIILC": -1.0,
+    "JSQuAD": -1.0,
+    "XL-Sum": 0.2205,
+    "MGSM": 0.328,
+    "WMT20 (en-ja)": 0.1948,
+    "WMT20 (ja-en)": 0.2024,
+    "Ja Avg": -0.5054,
+    "JMMLU": -1.0,
+    "JHumanEval": -1.0,
+    "OpenBookQA": -1.0,
+    "TriviaQA": -1.0,
+    "HellaSwag": -1.0,
+    "SQuAD2": -1.0,
+    "XWINO": -1.0,
+    "MMLU": 0.7038,
+    "GSM8K": -1.0,
+    "BBH": -1.0,
+    "HumanEval": -1.0,
+    "En Avg": -0.8107,
+    "SortKey": "Mixtral--v0.1047",
+    "Missing": "JCom, JEMHopQA, NIILC, JSQuAD, Ja Avg, OpenBookQA, TriviaQA, HellaSwag, SQuAD2, XWINO, GSM8K, BBH, HumanEval, En Avg"
   },
   {
     "Type": "base",
@@ -1213,7 +1244,8 @@ const dataSet = [
     "BBH": 0.1789,
     "HumanEval": 0.353,
     "En Avg": 0.48,
-    "SortKey": "Qwen1.5-007"
+    "SortKey": "Qwen1.5-007",
+    "Missing": ""
   },
   {
     "Type": "inst",
@@ -1251,7 +1283,8 @@ const dataSet = [
     "BBH": 0.3101,
     "HumanEval": 0.6354,
     "En Avg": 0.5646,
-    "SortKey": "Qwen2--Instruct007"
+    "SortKey": "Qwen2--Instruct007",
+    "Missing": ""
   },
   {
     "Type": "inst",
@@ -1289,7 +1322,8 @@ const dataSet = [
     "BBH": 0.2436,
     "HumanEval": 0.6939,
     "En Avg": 0.6455,
-    "SortKey": "Qwen2--Instruct072"
+    "SortKey": "Qwen2--Instruct072",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -1327,7 +1361,8 @@ const dataSet = [
     "BBH": 0.5325,
     "HumanEval": 0.4622,
     "En Avg": 0.5903,
-    "SortKey": "Qwen2-007"
+    "SortKey": "Qwen2-007",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -1365,7 +1400,8 @@ const dataSet = [
     "BBH": 0.6388,
     "HumanEval": 0.6049,
     "En Avg": 0.6867,
-    "SortKey": "Qwen2-072"
+    "SortKey": "Qwen2-072",
+    "Missing": ""
   },
   {
     "Type": "inst",
@@ -1403,7 +1439,8 @@ const dataSet = [
     "BBH": 0.4958,
     "HumanEval": 0.2671,
     "En Avg": 0.5011,
-    "SortKey": "RakutenAI--chat007"
+    "SortKey": "RakutenAI--chat007",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -1441,7 +1478,8 @@ const dataSet = [
     "BBH": 0.5317,
     "HumanEval": 0.228,
     "En Avg": 0.505,
-    "SortKey": "RakutenAI-007"
+    "SortKey": "RakutenAI-007",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -1479,7 +1517,8 @@ const dataSet = [
     "BBH": 0.3746,
     "HumanEval": 0.0,
     "En Avg": 0.3818,
-    "SortKey": "Sarashina2-007"
+    "SortKey": "Sarashina2-007",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -1517,7 +1556,8 @@ const dataSet = [
     "BBH": NaN,
     "HumanEval": NaN,
     "En Avg": NaN,
-    "SortKey": "Sarashina2-013"
+    "SortKey": "Sarashina2-013",
+    "Missing": "Japanese tasks, English tasks"
   },
   {
     "Type": "base",
@@ -1555,7 +1595,8 @@ const dataSet = [
     "BBH": 0.3531,
     "HumanEval": 0.0402,
     "En Avg": 0.3727,
-    "SortKey": "Swallow 007"
+    "SortKey": "Swallow 007",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -1593,7 +1634,8 @@ const dataSet = [
     "BBH": 0.4284,
     "HumanEval": 0.0848,
     "En Avg": 0.4358,
-    "SortKey": "Swallow 013"
+    "SortKey": "Swallow 013",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -1631,7 +1673,8 @@ const dataSet = [
     "BBH": 0.6537,
     "HumanEval": 0.2409,
     "En Avg": 0.5704,
-    "SortKey": "Swallow 070"
+    "SortKey": "Swallow 070",
+    "Missing": ""
   },
   {
     "Type": "inst",
@@ -1669,7 +1712,8 @@ const dataSet = [
     "BBH": 0.3646,
     "HumanEval": 0.0866,
     "En Avg": 0.3879,
-    "SortKey": "Swallow--instruct-v0.1007"
+    "SortKey": "Swallow--instruct-v0.1007",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -1707,7 +1751,8 @@ const dataSet = [
     "BBH": 0.4916,
     "HumanEval": 0.2732,
     "En Avg": 0.4789,
-    "SortKey": "Swallow-MS v0.1007"
+    "SortKey": "Swallow-MS v0.1007",
+    "Missing": ""
   },
   {
     "Type": "inst",
@@ -1745,7 +1790,8 @@ const dataSet = [
     "BBH": 0.4386,
     "HumanEval": 0.2512,
     "En Avg": 0.4511,
-    "SortKey": "Swallow-MS--instruct-v0.1007"
+    "SortKey": "Swallow-MS--instruct-v0.1007",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -1783,7 +1829,8 @@ const dataSet = [
     "BBH": 0.6822,
     "HumanEval": 0.4,
     "En Avg": 0.5977,
-    "SortKey": "Swallow-MX v0.1047"
+    "SortKey": "Swallow-MX v0.1047",
+    "Missing": ""
   },
   {
     "Type": "inst",
@@ -1821,7 +1868,8 @@ const dataSet = [
     "BBH": 0.6822,
     "HumanEval": 0.4,
     "En Avg": 0.5977,
-    "SortKey": "Swallow-MX--NVE-v0.1047"
+    "SortKey": "Swallow-MX--NVE-v0.1047",
+    "Missing": "Japanese MT-bench tasks"
   },
   {
     "Type": "base",
@@ -1859,7 +1907,8 @@ const dataSet = [
     "BBH": 0.5753,
     "HumanEval": 0.3439,
     "En Avg": 0.5398,
-    "SortKey": "Yi-1.5 006"
+    "SortKey": "Yi-1.5 006",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -1897,7 +1946,8 @@ const dataSet = [
     "BBH": 0.7117,
     "HumanEval": 0.3841,
     "En Avg": 0.5928,
-    "SortKey": "Yi-1.5 009"
+    "SortKey": "Yi-1.5 009",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -1935,7 +1985,8 @@ const dataSet = [
     "BBH": 0.7629,
     "HumanEval": 0.3866,
     "En Avg": 0.6407,
-    "SortKey": "Yi-1.5 034"
+    "SortKey": "Yi-1.5 034",
+    "Missing": ""
   },
   {
     "Type": "base",
@@ -1973,6 +2024,7 @@ const dataSet = [
     "BBH": 0.3433,
     "HumanEval": 0.1012,
     "En Avg": 0.3936,
-    "SortKey": "Youri 007"
+    "SortKey": "Youri 007",
+    "Missing": ""
   }
 ];

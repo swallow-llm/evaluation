@@ -6,7 +6,7 @@ ja_tasks:
   - title: 'JCom (JCommonsenseQA)'
     subtitle: "常識的な知識・推論に関する質問応答"
     text: 知識ベースに基づいて作成された5択の選択式問題
-    metric: 精度
+    metric: 正解率
     setting: 4-shot
     link:
       href: https://aclanthology.org/2022.lrec-1.317/
@@ -46,7 +46,7 @@ ja_tasks:
   - title: 'MGSM'
     subtitle: "数学（算数）"
     text: 小学校の数学の文章題データセット（GSM8K）の日本語訳
-    metric: 精度, 完全一致
+    metric: 正解率, 完全一致
     setting: 4-shot
     link:
       href: https://openreview.net/forum?id=fR3wGCk-IXp
@@ -70,7 +70,7 @@ ja_tasks:
   - title: 'JMMLU'
     subtitle: "マルチタスク言語理解"
     text: 4値選択式試験問題のベンチマークMMLUの日本語訳（53科目）
-    metric: 精度
+    metric: 正解率
     setting: 5-shot
     link:
       href: https://www.anlp.jp/proceedings/annual_meeting/2024/pdf_dir/A7-5.pdf
@@ -106,7 +106,7 @@ en_tasks:
   - title: 'OpenBookQA'
     subtitle: "事実と常識に基づく質問応答"
     text: 科学的な知識と常識に基づく4択の選択式問題
-    metric: 精度
+    metric: 正解率
     setting: 4-shot
     link:
       href: https://aclanthology.org/D18-1260/
@@ -114,7 +114,7 @@ en_tasks:
   - title: 'TriviaQA'
     subtitle: "知識に基づく質問応答"
     text: 雑学的な知識に基づく自由記述式質問応答
-    metric: 精度, 完全一致
+    metric: 正解率, 完全一致
     setting: 4-shot
     link:
       href: https://aclanthology.org/P17-1147/
@@ -122,7 +122,7 @@ en_tasks:
   - title: 'HellaSwag'
     subtitle: "常識推論"
     text: 次に起こるイベントを予測する4択の選択式問題
-    metric: 精度
+    metric: 正解率
     setting: 4-shot
     link:
       href: https://aclanthology.org/P19-1472/
@@ -130,7 +130,7 @@ en_tasks:
   - title: 'SQuAD2'
     subtitle: "機械読解"
     text: 根拠文書に対して作成された自由記述式質問応答
-    metric: 精度, 完全一致
+    metric: 正解率, 完全一致
     setting: 4-shot
     link:
       href: https://aclanthology.org/P18-2124/
@@ -138,7 +138,7 @@ en_tasks:
   - title: 'XWINO'
     subtitle: "常識推論"
     text: 文中の代名詞の先行詞を推定する2択の選択式問題
-    metric: 精度
+    metric: 正解率
     setting: 4-shot
     link:
       href: https://aclanthology.org/2021.findings-acl.310/
@@ -146,7 +146,7 @@ en_tasks:
   - title: 'MMLU'
     subtitle: "マルチタスク言語理解"
     text: 57科目からなる4値選択式の試験問題
-    metric: 精度
+    metric: 正解率
     setting: 5-shot
     link:
       href: https://openreview.net/forum?id=d7KBjmI3GmQ
@@ -154,7 +154,7 @@ en_tasks:
   - title: 'GSM8K'
     subtitle: "数学（算数）"
     text: 小学校の数学の文章題データセット
-    metric: 精度, 完全一致
+    metric: 正解率, 完全一致
     setting: 4-shot
     link:
       href: https://arxiv.org/abs/2110.14168
@@ -162,7 +162,7 @@ en_tasks:
   - title: 'BBH (BIG-Bench-Hard)'
     subtitle: LLMにとって難しいタスクのコレクション
     text: BIG-Benchデータセット (Srivastava et al., 2023) の中でも難易度の高い23件のタスク
-    metric: 精度, 完全一致
+    metric: 正解率, 完全一致
     setting: 3-shot, CoT
     link:
       href: https://aclanthology.org/2023.findings-acl.824/
@@ -200,13 +200,13 @@ tools:
     link:
       href: https://github.com/lm-sys/FastChat
 ---
-## 評価について
+# 評価について
 
 [Swallowプロジェクト](https://swallow-llm.github.io/)では、高性能な大規模言語モデル (LLM) の開発の参考とするため、LLMの開発と並行して、公開されているLLMの評価実験を独自に進めています。日本国内のみならず、世界中で開発されたLLMと比較することで、Swallowプロジェクトの「現在地」を知ることができます。各LLMの独自仕様（トークン化やシステムプロンプトなど）を加味しながら公平な条件で評価を行い、各LLMの開発方法と照らし合わせることで、高性能なLLMを開発するための「レシピ」を検討できます。また、タスクの評価スコアの高低が、LLMに性能差によるものではなく、評価における些細な仕様（プロンプトのフォーマット等）に起因することを経験することで、LLM評価における課題も実感しています。このサイトでは、Swallowプロジェクト内で実施されたLLMの評価結果を棒グラフやレーダーチャート、散布図などで閲覧できます。用途にあったLLMを選択するための情報としてだけでなく、日本語に強いLLMの開発のための参考情報としてお役に立てると幸いです。
 
 ## 評価タスク
 
-2024年度のSwallowプロジェクトでは、日本語理解・生成タスクとして10件のデータセット、日本語マルチターン対話タスクとして日本語MT-Bench、英語理解・生成タスクとして9件のデータセットを用い、LLMの評価実験を行っています。
+2024年度のSwallowプロジェクトでは、日本語理解・生成タスクとして10件のデータセット、日本語マルチターン対話タスクとして日本語MT-Bench、英語理解・生成タスクとして9件のデータセットを用い、LLMの評価実験を行っています。全てのタスクに関して、評価スコアは0 (最低) から1 (最高) までの範囲の値をとります。
 
 ### 日本語理解・生成タスク
 
@@ -214,8 +214,7 @@ tools:
 
 ### 日本語マルチターン対話タスク（日本語MT-Bench）
 
-マルチターン対話能力のベンチマークMT-Benchの日本語版である[日本語MT-Bench Nejumi Leaderboard Neo版](https://github.com/wandb/llm-leaderboard)を用いました。
-GPT-4 (gpt-4-1106-preview) を用いて応答文を10段階で自動評価します。評価のカテゴリは以下の通りです。
+マルチターン対話能力のベンチマークMT-Benchの日本語版である[日本語MT-Bench Nejumi Leaderboard Neo版](https://github.com/wandb/llm-leaderboard)を用いました。指示チューニングされたモデルのみ、GPT-4 (gpt-4-1106-preview) を用いて応答文を10段階で自動評価します。評価のカテゴリは以下の通りです。
 
 {% include taskcard.html items="jamtb_tasks" %}
 
@@ -230,6 +229,10 @@ GPT-4 (gpt-4-1106-preview) を用いて応答文を10段階で自動評価しま
 {%include card.html items="tools" style="col-sm-6 mb-3" %}
 
 ## 評価したモデル
+
+アルファベット順で掲載しています。
+
+{%include models.html %}
 
 ## 謝辞
 
