@@ -64,7 +64,7 @@
   name: KARAKURI LM 70B Chat v0.1
   size: 70
   type: instruct
-- basename: Swallow-MX-8x7b-NVE-v0.1
+- basename: Swallow-MX 8x7B v0.1
   missing: Japanese tasks, Japanese MT-bench tasks, English tasks
   model: karakuri-ai/karakuri-lm-8x7b-instruct-v0.1
   name: KARAKURI LM 8x7B Instruct v0.1
@@ -179,8 +179,7 @@
   size: 47
   type: instruct
 - basename: ''
-  missing: JCom, JEMHopQA, NIILC, JSQuAD, Ja Avg, OpenBookQA, TriviaQA, HellaSwag,
-    SQuAD2, XWINO, GSM8K, BBH, HumanEval, En Avg
+  missing: BBH, HumanEval
   model: mistralai/Mixtral-8x7B-v0.1
   name: Mixtral-8x7B-v0.1
   size: 47
@@ -234,7 +233,8 @@
   size: 7
   type: base
 - basename: ''
-  missing: Japanese tasks, English tasks
+  missing: JCom, JEMHopQA, NIILC, JSQuAD, MGSM, WMT20 (en-ja), WMT20 (ja-en), Ja Avg,
+    OpenBookQA, TriviaQA, HellaSwag, SQuAD2, XWINO, MMLU, GSM8K, BBH, En Avg
   model: sbintuitions/sarashina2-13b
   name: Sarashina2-13B
   size: 13
@@ -278,15 +278,9 @@
 - basename: ''
   missing: ''
   model: tokyotech-llm/Swallow-MX-8x7b-NVE-v0.1
-  name: Swallow-MX v0.1
+  name: Swallow-MX 8x7B v0.1
   size: 47
   type: base
-- basename: instruct・chatモデルではない
-  missing: Japanese MT-bench tasks
-  model: tokyotech-llm/Swallow-MX-8x7b-NVE-v0.1
-  name: Swallow-MX-8x7b-NVE-v0.1
-  size: 47
-  type: instruct
 - basename: ''
   missing: ''
   model: 01-ai/Yi-1.5-6B
