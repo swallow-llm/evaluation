@@ -1192,9 +1192,9 @@ const dataSet = [
     "MGSM": 0.328,
     "WMT20 (en-ja)": 0.1948,
     "WMT20 (ja-en)": 0.2024,
-    "Ja Avg": 0.3079,
+    "Ja Avg": 0.4444,
     "JMMLU": 0.5162,
-    "JHumanEval": -1.0,
+    "JHumanEval": 0.3652,
     "OpenBookQA": 0.388,
     "TriviaQA": 0.7938,
     "HellaSwag": 0.664,
@@ -1202,11 +1202,11 @@ const dataSet = [
     "XWINO": 0.9217,
     "MMLU": 0.7038,
     "GSM8K": 0.5823,
-    "BBH": -1.0,
-    "HumanEval": -1.0,
-    "En Avg": 0.2683,
+    "BBH": 0.6905,
+    "HumanEval": 0.3726,
+    "En Avg": 0.6087,
     "SortKey": "Mixtral--v0.1047",
-    "Missing": "BBH, HumanEval"
+    "Missing": ""
   },
   {
     "Type": "base",
