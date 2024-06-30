@@ -23,7 +23,7 @@
   size: 13
   type: base
 - basename: ''
-  missing: HumanEval
+  missing: ''
   model: Fugaku-LLM/Fugaku-LLM-13B
   name: Fugaku-LLM 13B
   size: 13
@@ -125,7 +125,7 @@
   size: 8
   type: instruct
 - basename: Llama 3 Swallow 70B
-  missing: Japanese tasks, Japanese MT-bench tasks, English tasks
+  missing: ''
   model: tokyotech-llm/Llama-3-Swallow-8B-Instruct-v0.1
   name: Llama 3 Swallow 70B Instruct
   size: 70
