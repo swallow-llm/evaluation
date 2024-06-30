@@ -233,8 +233,7 @@
   size: 7
   type: base
 - basename: ''
-  missing: JCom, JEMHopQA, NIILC, JSQuAD, MGSM, WMT20 (en-ja), WMT20 (ja-en), Ja Avg,
-    OpenBookQA, TriviaQA, HellaSwag, SQuAD2, XWINO, MMLU, GSM8K, BBH, En Avg
+  missing: ''
   model: sbintuitions/sarashina2-13b
   name: Sarashina2-13B
   size: 13
