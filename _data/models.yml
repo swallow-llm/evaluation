@@ -64,12 +64,6 @@
   name: KARAKURI LM 70B Chat v0.1
   size: 70
   type: instruct
-- basename: Swallow-MX 8x7B v0.1
-  missing: Japanese tasks, Japanese MT-bench tasks, English tasks
-  model: karakuri-ai/karakuri-lm-8x7b-instruct-v0.1
-  name: KARAKURI LM 8x7B Instruct v0.1
-  size: 47
-  type: instruct
 - basename: ''
   missing: ''
   model: karakuri-ai/karakuri-lm-70b-v0.1
