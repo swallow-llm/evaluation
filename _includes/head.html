@@ -1,9 +1,22 @@
+{% assign ui = site.data.ui[page.lang] | default: site.data.ui.en %}
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
+<meta name="description" content="{{ ui.description }}">
 <meta name="author" content="Naoaki Okazaki and Swallow project members">
 <meta name="generator" content="Jekyll">
-<title>Japanese LLM Evaluation</title>
+<title>{{ ui.title }}{% if page.title %} - {{ page.title }}{% endif %}</title>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ ui.title }}{% if page.title %} - {{ page.title }}{% endif %}">
+<meta name="twitter:description" content="{{ ui.description }}">
+<meta name="twitter:image:src" content="{{ page.cover_image | default: site.cover_image | absolute_url }}">
+
+<!-- Facebook OpenGraph -->
+<meta property="og:title" content="{{ ui.title }}{% if page.title %} - {{ page.title }}{% endif %}">
+<meta property="og:description" content="{{ ui.description }}">
+<meta property="og:image" content="{{ page.cover_image | default: site.cover_image | absolute_url }}">
 
 <script src="https://getbootstrap.jp/docs/5.3/assets/js/color-modes.js"></script>
 

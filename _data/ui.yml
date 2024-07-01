@@ -1,4 +1,6 @@
 en:
+  title: "Japanese LLM Evaluation"
+  description: This site visualizes the results of LLM evaluations conducted within the Swallow project, including bar graphs, radar charts, and scatter plots. We hope that this site will be useful not only as information for selecting the right LLM for your application, but also as reference information for the development of LLMs that are strong in Japanese.
   site: "Japanese LLM Evaluation 🔗"
   model: "Model"
   type: "Type"
@@ -35,6 +37,8 @@ en:
   reference: Reference
 
 ja:
+  title: "日本語LLM評価"
+  description: このサイトでは、Swallowプロジェクト内で実施されたLLMの評価結果を棒グラフやレーダーチャート、散布図などで閲覧できます。用途にあったLLMを選択するための情報としてだけでなく、日本語に強いLLMの開発のための参考情報としてお役に立てると幸いです。
   site: "日本語LLM評価 🔗"
   model: "モデル"
   type: "種別"

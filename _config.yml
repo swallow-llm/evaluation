@@ -28,6 +28,7 @@ baseurl: "/evaluation" # the subpath of your site, e.g. /blog
 url: "https://swallow-llm.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
+cover_image: assets/cover_bar.png
 
 # Build settings
 theme: minima
