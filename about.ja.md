@@ -201,7 +201,7 @@ tools:
     link:
       href: https://github.com/lm-sys/FastChat
   - title: "swallow-evaluation"
-    subtitle: Swallow Projectで利用した評価フレームワーク（上記のツールを統合し、改修を施している）
+    subtitle: 上記5つのツールを統合・改修した、Swallowプロジェクトで用いた評価フレームワーク
     link:
       href: https://github.com/swallow-llm/swallow-evaluation
 ---
