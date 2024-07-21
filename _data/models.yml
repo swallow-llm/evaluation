@@ -16,6 +16,12 @@
   name: CyberAgentLM2-7B
   size: 7
   type: base
+- basename: 非公開
+  missing: Japanese MT-bench tasks
+  model: cyberagent/calm3-22b-chat
+  name: CyberAgentLM3-22B-chat
+  size: 22
+  type: instruct
 - basename: ''
   missing: ''
   model: elyza/ELYZA-japanese-Llama-2-13b
@@ -40,6 +46,30 @@
   name: GPT-4o (gpt-4o-2024-05-13)
   size: .nan
   type: instruct
+- basename: Gemma 2 9B
+  missing: ''
+  model: google/gemma-2-9b-it
+  name: Gemma 2 9B IT
+  size: 9
+  type: instruct
+- basename: Gemma 2 27B
+  missing: Japanese MT-bench tasks
+  model: google/gemma-2-27b-it
+  name: Gemma 2 27B IT
+  size: 27
+  type: instruct
+- basename: ''
+  missing: ''
+  model: google/gemma-2-9b
+  name: Gemma 2 9B
+  size: 9
+  type: base
+- basename: ''
+  missing: ''
+  model: google/gemma-2-27b
+  name: Gemma 2 27B
+  size: 27
+  type: base
 - basename: ''
   missing: ''
   model: stabilityai/japanese-stablelm-base-gamma-7b
@@ -166,11 +196,29 @@
   name: Mistral-7B-v0.2
   size: 7
   type: base
+- basename: ''
+  missing: Japanese tasks, English tasks
+  model: mistralai/Mistral-Nemo-Base-2407
+  name: Mistral-Nemo-Base-2407
+  size: 12
+  type: base
+- basename: Mistral-Nemo-Base-2407
+  missing: Japanese tasks, Japanese MT-bench tasks, English tasks
+  model: mistralai/Mistral-Nemo-Instruct-2407
+  name: Mistral-Nemo-Instruct-2407
+  size: 12
+  type: instruct
 - basename: Mixtral-8x7B-v0.1
   missing: ''
   model: mistralai/Mixtral-8x7B-Instruct-v0.1
   name: Mixtral-8x7B-Instruct-v0.1
   size: 47
+  type: instruct
+- basename: Mixtral-8x22B-v0.1
+  missing: Japanese MT-bench tasks
+  model: mistralai/Mixtral-8x22B-Instruct-v0.1
+  name: Mixtral-8x22B-Instruct-v0.1
+  size: 141
   type: instruct
 - basename: ''
   missing: ''
@@ -255,6 +303,12 @@
   model: tokyotech-llm/Swallow-7b-instruct-v0.1
   name: Swallow-7b-instruct-v0.1
   size: 7
+  type: instruct
+- basename: Swallow-70b
+  missing: ''
+  model: tokyotech-llm/Swallow-70b-instruct-v0.1
+  name: Swallow-70b-instruct-v0.1
+  size: 70
   type: instruct
 - basename: ''
   missing: ''
