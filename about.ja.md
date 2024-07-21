@@ -200,6 +200,10 @@ tools:
     subtitle: LLMによる自動評価（MT-Bench）のフレームワーク
     link:
       href: https://github.com/lm-sys/FastChat
+  - title: "swallow-evaluation"
+    subtitle: 上記5つのツールを統合・改修した、Swallowプロジェクトで用いた評価フレームワーク
+    link:
+      href: https://github.com/swallow-llm/swallow-evaluation
 ---
 # 評価について
 

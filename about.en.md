@@ -192,6 +192,10 @@ tools:
     subtitle: An automatic evaluation framework by an LLM (MT-Bench)
     link:
       href: https://github.com/lm-sys/FastChat
+  - title: swallow-evaluation
+    subtitle: An evaluation framework used in Swallow Project (encompassing all the above-mentioned tools)
+    link:
+      href: https://github.com/swallow-llm/swallow-evaluation
 ---
 # About evaluation
 
