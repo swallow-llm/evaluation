@@ -223,7 +223,7 @@ function get_bar_data(dataSet, names, viewid)
         var y = b[key];
         if (isNaN(x)) x = 0.;
         if (isNaN(y)) y = 0.;
-        return y - x;
+        return x - y;
     });
 
     // Build the data with average scores.
@@ -356,7 +356,9 @@ function create_bar_chart(element, portrait, data, aspect_portrait, aspect_lands
                     { x: { beginAtZero: true, min: 0, max: 1 }, xAxes: [{ ticks: {autoSkip: false } } ] } :
                     { y: { beginAtZero: true, min: 0, max: 1 }, yAxes: [{ ticks: {autoSkip: false } } ] },
                 layout: { padding: {left: 20, right: 20} },
-                plugins: { title: { display: true, position: 'bottom', text: '{{ ui.lang_avg_long }}' } },
+                plugins: {
+                    title: { display: true, position: 'bottom', text: '{{ ui.lang_avg_long }}' },
+                },
             },
         }
     );

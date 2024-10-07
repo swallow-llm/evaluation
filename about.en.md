@@ -230,6 +230,7 @@ We used these software packages for evaluation.
 ## Evaluated models
 
 We list the LLMs in alphabetical order.
+Some LLMs do not have scores for language understanding and generation but only those for Japanese MT-bench.
 
 {%include models.html %}
 
