@@ -1,6 +1,6 @@
 default_selection:
   index: "__ALL__"
-  task: ["Llama 3 Swallow 8B Instruct", "Swallow-7b-instruct-v0.1"]
+  task: ["Llama 3.1 Swallow 8B Instruct v0.2", "Swallow-7b-instruct-v0.1"]
   scatter: "__ALL__"
 
 ja_fields:

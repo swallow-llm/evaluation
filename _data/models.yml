@@ -1,3 +1,15 @@
+- basename: 非公開
+  missing: ''
+  model: CohereForAI/aya-expanse-32b
+  name: Aya Expanse 32B
+  size: 32.0
+  type: instruct
+- basename: 非公開
+  missing: ''
+  model: CohereForAI/aya-expanse-8b
+  name: Aya Expanse 8B
+  size: 8.0
+  type: instruct
 - basename: ''
   missing: ''
   model: CohereForAI/c4ai-command-r-v01
@@ -88,6 +100,24 @@
   name: Gemma 2 9B
   size: 9.2
   type: base
+- basename: Gemma 2 Baku 2B
+  missing: ''
+  model: rinna/gemma-2-baku-2b-it
+  name: Gemma 2 Baku 2B IT
+  size: 2.6
+  type: instruct
+- basename: ''
+  missing: ''
+  model: rinna/gemma-2-baku-2b
+  name: Gemma 2 Baku 2B
+  size: 2.6
+  type: base
+- basename: Gemma 2 2B
+  missing: ''
+  model: google/gemma-2-2b-jpn-it
+  name: Gemma 2 JPN
+  size: 2.6
+  type: instruct
 - basename: ''
   missing: ''
   model: stabilityai/japanese-stablelm-base-gamma-7b
@@ -265,25 +295,37 @@
 - basename: Llama 3.1 Swallow 70B
   missing: ''
   model: tokyotech-llm/Llama-3.1-Swallow-8B-Instruct-v0.1
-  name: Llama 3.1 Swallow 70B Instruct
+  name: Llama 3.1 Swallow 70B Instruct v0.1
   size: 70
   type: instruct
-- basename: Llama 3.1 Swallow 8B
+- basename: Llama 3.1 Swallow 8B v0.1
   missing: ''
   model: tokyotech-llm/Llama-3.1-Swallow-8B-v0.1
-  name: Llama 3.1 Swallow 8B Instruct
+  name: Llama 3.1 Swallow 8B Instruct v0.1
+  size: 8.0
+  type: instruct
+- basename: Llama 3.1 Swallow 8B v0.2
+  missing: ''
+  model: tokyotech-llm/Llama-3.1-Swallow-8B-v0.2
+  name: Llama 3.1 Swallow 8B Instruct v0.2
   size: 8.0
   type: instruct
 - basename: ''
   missing: ''
   model: tokyotech-llm/Llama-3.1-Swallow-70B-v0.1
-  name: Llama 3.1 Swallow 70B
+  name: Llama 3.1 Swallow 70B v0.1
   size: 70
   type: base
 - basename: ''
   missing: ''
   model: tokyotech-llm/Llama-3.1-Swallow-8B-v0.1
-  name: Llama 3.1 Swallow 8B
+  name: Llama 3.1 Swallow 8B v0.1
+  size: 8.0
+  type: base
+- basename: ''
+  missing: ''
+  model: tokyotech-llm/Llama-3.1-Swallow-8B-v0.2
+  name: Llama 3.1 Swallow 8B v0.2
   size: 8.0
   type: base
 - basename: Llama 3.2 1B
@@ -352,17 +394,17 @@
   name: Mistral-NeMo-Instruct-2407 (12B)
   size: 12
   type: instruct
-- basename: ''
+- basename: Mistral-NeMo-Minitron-8B-Base
   missing: ''
   model: nvidia/Mistral-NeMo-Minitron-8B-Instruct
   name: Mistral-NeMo-Minitron 8B Instruct
-  size: .nan
+  size: 8.4
   type: instruct
 - basename: ''
   missing: ''
   model: nvidia/Mistral-NeMo-Minitron-8B-Base
   name: Mistral-NeMo-Minitron 8B
-  size: .nan
+  size: 8.4
   type: base
 - basename: ''
   missing: ''
@@ -442,17 +484,53 @@
   name: Qwen2.5-72B-Instruct
   size: 72
   type: instruct
+- basename: Qwen2.5-3B
+  missing: ''
+  model: Qwen/Qwen2.5-3B-Instruct
+  name: Qwen2.5-3B-Instruct
+  size: 3.1
+  type: instruct
 - basename: Qwen2.5-7B
   missing: ''
   model: Qwen/Qwen2.5-7B-Instruct
   name: Qwen2.5-7B-Instruct
   size: 7.6
   type: instruct
+- basename: Qwen2.5-0.5B
+  missing: ''
+  model: Qwen/Qwen2.5-0.5B-Instruct
+  name: Qwen2.5-0.5B-Instruct
+  size: 0.5
+  type: instruct
+- basename: ''
+  missing: ''
+  model: Qwen/Qwen2.5-0.5B
+  name: Qwen2.5-0.5B
+  size: 0.5
+  type: base
 - basename: ''
   missing: ''
   model: Qwen/Qwen2.5-72B
   name: Qwen2.5-72B
   size: 72
+  type: base
+- basename: Qwen2.5-1.5B
+  missing: ''
+  model: Qwen/Qwen2.5-1.5B-Instruct
+  name: Qwen2.5-1.5B-Instruct
+  size: 1.5
+  type: instruct
+- basename: ''
+  missing: ''
+  model: Qwen/Qwen2.5-1.5B
+  name: Qwen2.5-1.5B
+  size: 1.5
+  type: base
+- basename: ''
+  missing: ''
+  model: Qwen/Qwen2.5-3B
+  name: Qwen2.5-3B
+  size: 3.1
   type: base
 - basename: ''
   missing: ''

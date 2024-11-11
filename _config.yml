@@ -47,6 +47,8 @@ plugins:
 exclude:
    - .sass-cache/
    - .jekyll-cache/
+   - README.md
+   - LICENSE
    - gemfiles/
    - Gemfile
    - Gemfile.lock
