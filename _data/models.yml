@@ -306,8 +306,14 @@
   type: instruct
 - basename: Llama 3.1 Swallow 8B v0.2
   missing: ''
-  model: tokyotech-llm/Llama-3.1-Swallow-8B-v0.2
+  model: tokyotech-llm/Llama-3.1-Swallow-8B-Instruct-v0.2
   name: Llama 3.1 Swallow 8B Instruct v0.2
+  size: 8.0
+  type: instruct
+- basename: Llama 3.1 Swallow 8B v0.2
+  missing: ''
+  model: tokyotech-llm/Llama-3.1-Swallow-8B-Instruct-v0.3
+  name: Llama 3.1 Swallow 8B Instruct v0.3
   size: 8.0
   type: instruct
 - basename: ''
@@ -352,6 +358,12 @@
   name: Llama 3.2 3B
   size: 3.2
   type: base
+- basename: 非公開
+  missing: ''
+  model: meta-llama/Llama-3.3-70B-Instruct
+  name: Llama 3.3 70B Instruct
+  size: 70
+  type: instruct
 - basename: 非公開
   missing: ''
   model: elyza/Llama-3-ELYZA-JP-8B
@@ -435,6 +447,30 @@
   model: mistralai/Mixtral-8x22B-v0.1
   name: Mixtral-8x22B-v0.1
   size: 141
+  type: base
+- basename: OLMo-2-1124-13B
+  missing: ''
+  model: allenai/OLMo-2-1124-13B-Instruct
+  name: OLMo-2-1124-13B-Instruct
+  size: 13
+  type: instruct
+- basename: OLMo-2-1124-7B
+  missing: ''
+  model: allenai/OLMo-2-1124-7B-Instruct
+  name: OLMo-2-1124-7B-Instruct
+  size: 7.3
+  type: instruct
+- basename: ''
+  missing: ''
+  model: allenai/OLMo-2-1124-13B
+  name: OLMo-2-1124-13B
+  size: 13
+  type: base
+- basename: ''
+  missing: ''
+  model: allenai/OLMo-2-1124-7B
+  name: OLMo-2-1124-7B
+  size: 7.3
   type: base
 - basename: 非公開
   missing: ''

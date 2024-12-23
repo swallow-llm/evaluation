@@ -534,7 +534,10 @@ let table = new DataTable('#example', {
     },
     initComplete: function() {
         // Set the default selections for index pages accessed with an empty QueryString.
-        if (location.pathname.endsWith("index.ja.html") || location.pathname.endsWith("index.en.html")) {
+        if (
+            location.pathname.endsWith("index.ja.html") ||
+            location.pathname.endsWith("index.en.html") ||
+            ) {
             if (location.search == "") {
                 // Default selections.
                 let params = {{ site.data.const.default_selection | jsonify }};
