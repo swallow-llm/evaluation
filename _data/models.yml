@@ -304,13 +304,19 @@
   name: Llama 3.1 Swallow 8B Instruct v0.1
   size: 8.0
   type: instruct
-- basename: Llama 3.1 Swallow 8B v0.2
+- basename: Llama 3.1 8B Instruct 継続事前学習
   missing: ''
   model: tokyotech-llm/Llama-3.1-Swallow-8B-Instruct-v0.2
   name: Llama 3.1 Swallow 8B Instruct v0.2
   size: 8.0
   type: instruct
-- basename: Llama 3.1 Swallow 8B v0.2
+- basename: Llama 3.1 Swallow 70B
+  missing: ''
+  model: tokyotech-llm/Llama-3.1-Swallow-70B-Instruct-v0.3
+  name: Llama 3.1 Swallow 70B Instruct v0.3
+  size: 70
+  type: instruct
+- basename: Llama 3.1 8B Instruct 継続事前学習
   missing: ''
   model: tokyotech-llm/Llama-3.1-Swallow-8B-Instruct-v0.3
   name: Llama 3.1 Swallow 8B Instruct v0.3
